@@ -70,18 +70,33 @@ const specsBottom = [
 
 export default function VisualSpecs() {
     return (
-        <section className="relative min-h-screen bg-black text-white overflow-hidden py-24 lg:py-0">
+        <section className="hidden lg:block relative min-h-screen bg-black text-white overflow-hidden py-24 lg:py-0">
             {/* Main Background Image - Full Canvas */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/Hero/2.jpg"
-                    alt="Helium 160 Specifications"
-                    fill
-                    className="object-cover lg:object-fill"
-                    priority
-                />
-                {/* Radial gradient to highlight the bike in center and darken edges for text */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.8)_85%)]" />
+            <div className="absolute inset-0 z-0 h-full">
+                <div className="sticky top-0 h-screen w-full overflow-hidden">
+                    {/* Desktop Background */}
+                    <div className="hidden lg:block relative w-full h-full">
+                        <Image
+                            src="/Hero/2.jpg"
+                            alt="Helium 160 Specifications"
+                            fill
+                            className="object-cover lg:object-fill"
+                            priority
+                        />
+                    </div>
+                    {/* Mobile Background */}
+                    <div className="lg:hidden relative w-full h-full">
+                        <Image
+                            src="/Hero/mobile3.jpg"
+                            alt="Helium 160 Specifications Mobile"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
+                    {/* Radial gradient to highlight the bike in center and darken edges for text */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.8)_85%)]" />
+                </div>
             </div>
 
             <div className="relative z-10 w-full h-full min-h-[80vh] lg:h-screen flex items-center justify-center">
@@ -141,7 +156,7 @@ export default function VisualSpecs() {
             </div>
 
             {/* Mobile Stacked Specs */}
-            <div className="relative z-10 lg:hidden px-6 pb-24 grid grid-cols-1 gap-12 max-w-2xl mx-auto pt-[40vh]">
+            <div className="relative z-10 lg:hidden px-6 pb-24 grid grid-cols-1 gap-6 max-w-2xl mx-auto pt-24">
                 {[...specsLeft, ...specsRight, ...specsBottom].map((spec, i) => (
                     <motion.div
                         key={spec.label}

@@ -65,10 +65,10 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-5xl md:text-6xl font-brand font-black text-white group-hover:text-accent transition-colors duration-300">
+                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-accent transition-colors duration-300">
                                         {stat.value}
                                     </span>
-                                    <span className="text-xl md:text-2xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
+                                    <span className="text-lg md:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
                                         {stat.unit}
                                     </span>
                                 </div>
@@ -87,7 +87,7 @@ export default function PerformanceSection() {
                 <div className="w-full lg:w-1/2 h-[50vh] lg:h-[80vh] relative order-1 lg:order-2">
                     <div className="relative w-full h-full">
                         <Image
-                            src="/Hero/3.jpg"
+                            src="/Hero/outlinebike2.png"
                             alt="Helium 160 Performance Engineering"
                             fill
                             className="object-cover lg:object-contain"
