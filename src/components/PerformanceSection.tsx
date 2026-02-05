@@ -32,7 +32,19 @@ const stats = [
 
 export default function PerformanceSection() {
     return (
-        <section className="relative min-h-screen bg-black text-white overflow-hidden py-24">
+        <section className="relative min-h-screen text-white overflow-hidden py-24">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/Hero/bg2.jpg"
+                    alt="Engineering Background"
+                    fill
+                    className="object-cover"
+                    priority
+                />
+                <div className="absolute inset-0 bg-black/60" />
+            </div>
+
             <div className="max-w-[1600px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center relative z-10">
 
                 {/* Left Content - Specs */}
@@ -97,14 +109,6 @@ export default function PerformanceSection() {
                         </div>
 
                         {/* Desktop Image */}
-                        <div className="hidden lg:block w-full h-full relative">
-                            <Image
-                                src="/Hero/herospec.jpg"
-                                alt="Helium 160 Performance Engineering - Desktop"
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
 
                         {/* Gradient Overlay for blending */}
                         <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black via-transparent to-transparent" />
