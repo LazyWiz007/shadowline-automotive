@@ -2,70 +2,107 @@
 
 import { motion } from "framer-motion";
 
+const links = {
+    product: ["Helium 160", "Accessories", "Apparel", "Configurator"],
+    company: ["About Shadowline", "Engineering", "Careers", "Press"],
+    support: ["Contact Us", "Warranty", "Find a Dealer", "Owner's Manual"],
+};
+
 export default function Footer() {
     return (
-        <footer className="bg-black text-white border-t border-white/10 relative overflow-hidden">
-            {/* CTA Section */}
-            <div className="py-24 px-6 md:px-12 relative z-10">
-                <div className="max-w-7xl mx-auto text-center">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-5xl md:text-8xl font-brand font-bold uppercase italic tracking-tighter mb-8"
-                    >
-                        Ready to <span className="text-accent">Ride?</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-gray-400 font-sans text-lg md:text-xl max-w-2xl mx-auto mb-12"
-                    >
-                        Experience the future of cycling. Pre-orders are now open for the 2026 production run.
-                    </motion.p>
-                    <motion.button
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-12 py-5 bg-accent text-black font-brand font-bold uppercase tracking-widest text-lg hover:bg-white transition-colors duration-300"
-                    >
-                        Reserve Yours
-                    </motion.button>
-                </div>
-            </div>
-
-            {/* Footer Content */}
-            <div className="bg-[#050505] py-12 border-t border-white/5 relative z-10">
-                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="text-center md:text-left">
-                        <h3 className="text-2xl font-brand font-bold uppercase italic tracking-widest text-white mb-2">Shadowline</h3>
-                        <p className="text-xs text-gray-500 font-sans uppercase tracking-wide">Automotive Grade Bicycles</p>
+        <footer className="bg-[#050505] text-white pt-24 pb-12 overflow-hidden relative">
+            <div className="max-w-[1800px] mx-auto px-6 md:px-12 relative z-10">
+                <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-32 mb-32">
+                    {/* Left: Slogan */}
+                    <div className="w-full lg:w-1/2">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] font-brand font-bold uppercase tracking-tighter"
+                        >
+                            THE RIDE <br />
+                            NEVER <br />
+                            ENDS
+                        </motion.h1>
                     </div>
 
-                    <div className="flex space-x-8">
-                        {['Instagram', 'Twitter', 'YouTube'].map((social) => (
+                    {/* Right: Navigation Grid */}
+                    <div className="w-full lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-8">
+                        <div>
+                            <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Product</h4>
+                            <ul className="space-y-4">
+                                {links.product.map(link => (
+                                    <li key={link}>
+                                        <a href="#" className="font-sans text-sm font-medium hover:text-teal-400 transition-colors duration-300">{link}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Company</h4>
+                            <ul className="space-y-4">
+                                {links.company.map(link => (
+                                    <li key={link}>
+                                        <a href="#" className="font-sans text-sm font-medium hover:text-teal-400 transition-colors duration-300">{link}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Support</h4>
+                            <ul className="space-y-4">
+                                {links.support.map(link => (
+                                    <li key={link}>
+                                        <a href="#" className="font-sans text-sm font-medium hover:text-teal-400 transition-colors duration-300">{link}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/10">
+                    {/* Socials */}
+                    <div className="flex space-x-6">
+                        {['Instagram', 'Twitter', 'YouTube', 'LinkedIn'].map((social) => (
                             <a
                                 key={social}
                                 href="#"
-                                className="text-gray-400 hover:text-accent transition-colors text-xs font-bold uppercase tracking-wider font-brand"
+                                className="text-white hover:text-teal-400 transition-colors"
                             >
-                                {social}
+                                {/* Simple icon placeholders or text logic */}
+                                <span className="sr-only">{social}</span>
+                                <div className="w-5 h-5 bg-current mask-icon" />
+                                {/* Using text for simplicity if icons aren't imported, but assuming text fallback or actual icons later. 
+                                    For now reverting to text based on previous implementation but cleaner.
+                                */}
+                                <span className="text-xs font-bold uppercase tracking-wider font-brand">{social}</span>
                             </a>
                         ))}
                     </div>
 
-                    <div className="text-xs text-gray-600 font-sans">
-                        &copy; {new Date().getFullYear()} Shadowline Automotive.
+                    {/* Certifications / Logo Placeholder */}
+                    <div className="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
+                        {/* Placeholder for ISO/Brand Logos */}
+                        <div className="h-8 w-8 border border-white/30 rounded-full flex items-center justify-center text-[8px] font-mono">ISO</div>
+                        <div className="h-8 w-8 border border-white/30 rounded-full flex items-center justify-center text-[8px] font-mono">TUV</div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 text-[10px] text-gray-600 font-sans uppercase tracking-wider">
+                    <p>Copyright © {new Date().getFullYear()} - Shadowline Automotive</p>
+                    <div className="flex gap-6">
+                        <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+                        <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+                        <a href="#" className="hover:text-white transition-colors">Legal Links</a>
+                        <a href="#" className="hover:text-white transition-colors">Privacy</a>
                     </div>
                 </div>
             </div>
-
             {/* Background Glow */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-teal-900/10 blur-[150px] rounded-full pointer-events-none" />
         </footer>
     );
 }

@@ -10,15 +10,20 @@ const images = [
         className: "col-span-1 md:col-span-2 row-span-2 h-[60vh] md:h-[80vh]",
     },
     {
-        src: "/Hero/Artboard 2.jpg",
+        src: "/Hero/2.png",
         alt: "Helium 160 Cockpit View",
         className: "col-span-1 h-[30vh] md:h-[40vh]",
     },
     {
-        src: "/Hero/5.jpg",
+        src: "/Hero/3.jpg",
         alt: "Helium 160 Rear Angle",
         className: "col-span-1 h-[30vh] md:h-[40vh]",
     },
+    {
+        src: "/Hero/4.png",
+        alt: "Helium 160 Rear Angle",
+        className: " h-[50vh] md:h-[30vh]",
+    }
 ];
 
 export default function Gallery() {
@@ -31,11 +36,11 @@ export default function Gallery() {
                     viewport={{ once: true }}
                     className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter text-white"
                 >
-                    Pure <span className="text-accent">Aesthetics</span>
+                    Pure <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Aesthetics</span>
                 </motion.h2>
             </div>
 
-            <div className="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {images.map((img, index) => (
                     <motion.div
                         key={index}

@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  /* Refined Black */
-  --foreground: #F5F5F7;
-  /* Ghost White */
-  --accent: #EAB308;
-  /* Racing Yellow */
-  --menu-overlay: #637373;
-  /* Koenigsegg Slate */
-  --surface: #121212;
-  /* Darker Gray for cards */
-  --subtle: #262626;
-  /* Borders/Separators/Subtle Text */
+    --background: #050505;
+    /* Refined Black */
+    --foreground: #F5F5F7;
+    /* Ghost White */
+    --accent: #2DD4BF;
+    /* Teal 400 */
+    --menu-overlay: #637373;
+    /* Koenigsegg Slate */
+    --surface: #121212;
+    /* Darker Gray for cards */
+    --subtle: #262626;
+    /* Borders/Separators/Subtle Text */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-menu-overlay: var(--menu-overlay);
-  --color-surface: var(--surface);
-  --color-subtle: var(--subtle);
-  --font-sans: var(--font-montserrat);
-  --font-brand: var(--font-michroma);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-accent: var(--accent);
+    --color-menu-overlay: var(--menu-overlay);
+    --color-surface: var(--surface);
+    --color-subtle: var(--subtle);
+    --font-sans: var(--font-montserrat);
+    --font-brand: var(--font-michroma);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

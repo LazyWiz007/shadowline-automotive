@@ -114,7 +114,7 @@ export default function RaceReady() {
                                 <p className="text-gray-400 mb-8">
                                     Spend time on track. Watch the data. The answer becomes obvious.
                                 </p>
-                                <p className="text-4xl md:text-5xl font-brand font-black uppercase italic tracking-widest text-accent text-right">
+                                <p className="text-4xl md:text-5xl font-brand font-black uppercase italic tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 text-right">
                                     NEED FOR SPEED
                                 </p>
                             </div>

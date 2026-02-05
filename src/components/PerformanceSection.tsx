@@ -45,7 +45,7 @@ export default function PerformanceSection() {
                     >
                         <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight mb-4">
                             Engineering <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
                                 Excellence
                             </span>
                         </h2>
@@ -65,7 +65,7 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-accent transition-colors duration-300">
+                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-blue-500 transition-all duration-300">
                                         {stat.value}
                                     </span>
                                     <span className="text-lg md:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
@@ -86,12 +86,26 @@ export default function PerformanceSection() {
                 {/* Right Content - Image */}
                 <div className="w-full lg:w-1/2 h-[50vh] lg:h-[80vh] relative order-1 lg:order-2">
                     <div className="relative w-full h-full">
-                        <Image
-                            src="/Hero/outlinebike2.png"
-                            alt="Helium 160 Performance Engineering"
-                            fill
-                            className="object-cover lg:object-contain"
-                        />
+                        {/* Mobile Image */}
+                        <div className="block lg:hidden w-full h-full relative">
+                            <Image
+                                src="/Hero/mobile3.jpg"
+                                alt="Helium 160 Performance Engineering - Mobile"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Desktop Image */}
+                        <div className="hidden lg:block w-full h-full relative">
+                            <Image
+                                src="/Hero/herospec.jpg"
+                                alt="Helium 160 Performance Engineering - Desktop"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+
                         {/* Gradient Overlay for blending */}
                         <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black via-transparent to-transparent" />
                     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +8,27 @@ import MenuToggle from "./MenuToggle";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious() ?? 0;
+
+        // Background logic: Solid black if scrolled past 50px
+        if (latest > 50) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+
+        // Visibility logic: Hide on scroll down, show on scroll up
+        if (latest > previous && latest > 150) {
+            setIsVisible(false);
+        } else {
+            setIsVisible(true);
+        }
+    });
 
     const mainLinks = [
         { name: "Helium 160", href: "#" },
@@ -27,10 +48,18 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-[70] py-6 px-6 md:py-8 md:px-12 bg-transparent pointer-events-none">
+            <motion.nav
+                initial={{ y: 0 }}
+                animate={{
+                    y: isVisible ? 0 : "-100%",
+                    backgroundColor: isScrolled ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="fixed top-0 left-0 right-0 z-[70] py-4 px-6 md:py-8 md:px-12 pointer-events-auto"
+            >
                 <div className="flex items-center justify-between w-full pointer-events-auto">
                     {/* Logo */}
-                    <Link href="/" className="z-[70] relative group block w-48 h-auto">
+                    <Link href="/" className="z-[70] relative group block w-32 md:w-48 h-auto">
                         <Image
                             src="/logo/SLlogo.png"
                             alt="Shadowline"
@@ -43,7 +72,7 @@ export default function Navbar() {
                     {/* Animated Menu Toggle */}
                     <MenuToggle isOpen={isMenuOpen} toggle={() => setIsMenuOpen(!isMenuOpen)} />
                 </div>
-            </nav>
+            </motion.nav>
 
             {/* Full Screen Menu Overlay */}
             <AnimatePresence>
@@ -53,12 +82,12 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-[60] bg-black flex flex-col justify-between p-12"
+                        className="fixed inset-0 z-[60] bg-black flex flex-col justify-between p-6 md:p-12"
                     >
                         {/* Header in Overlay - Logo duplication for layout balance if needed, but nav is z-70 so visible */}
                         {/* We just need spacing here effectively */}
                         <div className="flex justify-between items-start opacity-0 pointer-events-none">
-                            <div className="w-48 h-auto relative">
+                            <div className="w-32 md:w-48 h-auto relative">
                                 <Image
                                     src="/logo/SLlogo.png"
                                     alt="Shadowline"

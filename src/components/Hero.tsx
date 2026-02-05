@@ -26,7 +26,7 @@ export default function Hero() {
                 />
 
                 {/* Refined Gradient - Custom angle (105deg) for dynamic flow */}
-                <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.3)_40%,transparent_100%)] z-10" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.3)_40%,transparent_100%)] z-10" />
             </div>
 
             {/* Content Content - Aligned with Navbar */}
