@@ -147,8 +147,8 @@ export default function VisualSpecs() {
                                 transition={{ delay: 0.5 + i * 0.1 }}
                                 className="group cursor-pointer pointer-events-auto"
                             >
-                                <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,1)]">{spec.label}</h4>
-                                <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <h4 className="text-white font-brand font-bold uppercase tracking-widest text-xl mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,1)]">{spec.label}</h4>
+                                <p className="text-gray-300 font-sans text-xl font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>

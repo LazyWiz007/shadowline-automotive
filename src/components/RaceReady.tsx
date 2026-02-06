@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function RaceReady() {
+    const [activeSection, setActiveSection] = useState(1);
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -27,6 +28,15 @@ export default function RaceReady() {
                                 Race Ready.
                             </span>
                         </h2>
+                        <div className="mt-12 w-48">
+                            <span className="block text-sm font-mono font-bold text-white mb-2 tracking-widest">
+                                0{activeSection}
+                            </span>
+                            <div className="w-full h-px bg-white/30 mb-2" />
+                            <span className="block text-sm font-mono font-bold text-white/50 tracking-widest">
+                                03
+                            </span>
+                        </div>
                     </motion.div>
                 </div>
 
@@ -47,6 +57,7 @@ export default function RaceReady() {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ margin: "-20% 0px -20% 0px" }}
+                        onViewportEnter={() => setActiveSection(1)}
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
@@ -65,6 +76,7 @@ export default function RaceReady() {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ margin: "-20% 0px -20% 0px" }}
+                        onViewportEnter={() => setActiveSection(2)}
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
@@ -85,6 +97,7 @@ export default function RaceReady() {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ margin: "-20% 0px -20% 0px" }}
+                        onViewportEnter={() => setActiveSection(3)}
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
