@@ -5,23 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-const faqs = [
-    {
-        id: "01",
-        question: "Purpose-Built Balance",
-        answer: "Helium 160 is engineered around balance before brute force. With a near-perfect 51:49 front-to-rear weight distribution and an ultra-light 82 kg total mass, the bike remains composed under braking, stable at lean, and predictable at the limit. This is not accidental geometry — it is intentional control, designed to let riders push harder with confidence, lap after lap",
-    },
-    {
-        id: "02",
-        question: "Structural Carbon Architecture",
-        answer: "The carbon fiber seat and tank are not cosmetic additions — they are load-bearing structural members. By eliminating a traditional metal subframe, Helium achieves exceptional rigidity with minimal weight. The result is a tighter feedback loop between rider and machine, where every input translates instantly into motion.",
-    },
-    {
-        id: "03",
-        question: "Race-Ready Without Excess",
-        answer: "Every component exists for a reason. Billet aluminium triple clamps, swingarm, and clip-ons. Fully adjustable Maselli suspension front and rear. Compact 14-inch race wheels with a focused tyre profile. Nothing is overbuilt, nothing is wasted. Helium 160 delivers a true Mini GP experience — without the cost, complexity, or compromise of imported alternatives",
-    },
-];
+import { extremePerformanceFaqs } from "@/lib/data";
 
 export default function ExtremePerformance() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -47,7 +31,7 @@ export default function ExtremePerformance() {
 
                     {/* FAQ List */}
                     <div className="flex flex-col gap-8">
-                        {faqs.map((faq, index) => (
+                        {extremePerformanceFaqs.map((faq, index) => (
                             <div key={faq.id} className="border-b border-gray-800 pb-8">
                                 <button
                                     onClick={() => toggleAccordion(index)}

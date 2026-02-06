@@ -1,15 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
 export default function RaceReady() {
     const [activeSection, setActiveSection] = useState(1);
     const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"],
-    });
 
     return (
         <section ref={containerRef} className="bg-black text-white relative">
@@ -127,7 +123,7 @@ export default function RaceReady() {
                                 <p className="text-gray-400 mb-8">
                                     Spend time on track. Watch the data. The answer becomes obvious.
                                 </p>
-                                <p className="text-4xl md:text-5xl font-brand font-black uppercase italic tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#2A909B] to-[#3BD9CC] text-right">
+                                <p className="text-4xl md:text-5xl font-brand font-black uppercase italic tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal text-right">
                                     NEED FOR SPEED
                                 </p>
                             </div>

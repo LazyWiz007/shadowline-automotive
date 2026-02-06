@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
-import TechSpecs from "@/components/TechSpecs";
 import Footer from "@/components/Footer";
 import RaceReady from "@/components/RaceReady";
 import VisualSpecs from "@/components/VisualSpecs";

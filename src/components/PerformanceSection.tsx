@@ -3,32 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const stats = [
-    {
-        label: "Engine",
-        value: "160",
-        unit: "CC",
-        detail: "High Performance",
-    },
-    {
-        label: "Weight",
-        value: "82",
-        unit: "KG",
-        detail: "Ultralight Build",
-    },
-    {
-        label: "Power",
-        value: "18",
-        unit: "BHP",
-        detail: "Peak Output",
-    },
-    {
-        label: "Balance",
-        value: "51:49",
-        unit: "F:R",
-        detail: "Weight Dist.",
-    },
-];
+import { performanceStats } from "@/lib/data";
 
 export default function PerformanceSection() {
     return (
@@ -57,7 +32,7 @@ export default function PerformanceSection() {
                     >
                         <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight mb-4">
                             Engineering <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A909B] to-[#3BD9CC]">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal">
                                 Excellence
                             </span>
                         </h2>
@@ -67,7 +42,7 @@ export default function PerformanceSection() {
                     </motion.div>
 
                     <div className="grid grid-cols-2 gap-x-12 gap-y-16">
-                        {stats.map((stat, index) => (
+                        {performanceStats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
                                 initial={{ opacity: 0, y: 20 }}
@@ -77,7 +52,7 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#2A909B] group-hover:to-[#3BD9CC] transition-all duration-300">
+                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
                                         {stat.value}
                                     </span>
                                     <span className="text-lg md:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
