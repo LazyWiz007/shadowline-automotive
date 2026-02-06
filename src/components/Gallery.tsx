@@ -36,7 +36,7 @@ export default function Gallery() {
                     viewport={{ once: true }}
                     className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter text-white"
                 >
-                    Pure <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Aesthetics</span>
+                    Pure <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A909B] to-[#3BD9CC]">Aesthetics</span>
                 </motion.h2>
             </div>
 

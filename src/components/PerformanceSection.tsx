@@ -57,7 +57,7 @@ export default function PerformanceSection() {
                     >
                         <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight mb-4">
                             Engineering <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A909B] to-[#3BD9CC]">
                                 Excellence
                             </span>
                         </h2>
@@ -77,7 +77,7 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-blue-500 transition-all duration-300">
+                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#2A909B] group-hover:to-[#3BD9CC] transition-all duration-300">
                                         {stat.value}
                                     </span>
                                     <span className="text-lg md:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">

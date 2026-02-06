@@ -44,9 +44,9 @@ export default function TechSpecs() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-bold uppercase italic tracking-tighter text-white mb-4"
                     >
-                        Engineering <span className="text-accent">Excellence</span>
+                        Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A909B] to-[#3BD9CC]">Excellence</span>
                     </motion.h2>
-                    <div className="h-1 w-24 bg-accent" />
+                    <div className="h-1 w-24 bg-gradient-to-r from-[#2A909B] to-[#3BD9CC]" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -60,11 +60,11 @@ export default function TechSpecs() {
                             className="group p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
                         >
                             <div className="flex justify-between items-start mb-6">
-                                <spec.icon className="w-8 h-8 text-gray-500 group-hover:text-accent transition-colors" />
+                                <spec.icon className="w-8 h-8 text-gray-500 group-hover:text-[#3BD9CC] transition-colors" />
                                 <span className="text-xs font-mono text-gray-600 uppercase tracking-widest">{`0${index + 1}`}</span>
                             </div>
                             <h3 className="text-3xl font-bold text-white mb-2">{spec.value}</h3>
-                            <p className="text-sm font-medium text-accent uppercase tracking-wider mb-1">{spec.label}</p>
+                            <p className="text-sm font-medium text-[#3BD9CC] uppercase tracking-wider mb-1">{spec.label}</p>
                             <p className="text-xs text-gray-400 font-light">{spec.sub}</p>
                         </motion.div>
                     ))}
