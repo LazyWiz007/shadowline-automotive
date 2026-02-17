@@ -23,7 +23,7 @@ export default function PerformanceSection() {
             <div className="max-w-[1600px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center relative z-10">
 
                 {/* Left Content - Specs */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-center gap-16 order-2 lg:order-1 mt-12 lg:mt-0">
+                <div className="w-full lg:w-[60%] flex flex-col justify-center gap-16 order-2 lg:order-1 mt-12 lg:mt-0 pr-0 lg:pr-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function PerformanceSection() {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-2 gap-x-12 gap-y-16">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 lg:gap-x-12 xl:gap-x-24 gap-y-20 lg:gap-y-32">
                         {performanceStats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -52,17 +52,17 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-3xl md:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
+                                    <span className="text-3xl lg:text-3xl xl:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
                                         {stat.value}
                                     </span>
-                                    <span className="text-lg md:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
+                                    <span className="text-lg lg:text-base xl:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
                                         {stat.unit}
                                     </span>
                                 </div>
-                                <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-1">
+                                <h4 className="text-white font-bold uppercase tracking-widest text-xs lg:text-[10px] xl:text-sm mb-1 whitespace-nowrap">
                                     {stat.label}
                                 </h4>
-                                <p className="text-gray-500 text-xs font-medium uppercase tracking-wide">
+                                <p className="text-gray-500 text-[10px] xl:text-xs font-medium uppercase tracking-wide whitespace-nowrap">
                                     {stat.detail}
                                 </p>
                             </motion.div>
@@ -71,7 +71,7 @@ export default function PerformanceSection() {
                 </div>
 
                 {/* Right Content - Image */}
-                <div className="w-full lg:w-1/2 h-[50vh] lg:h-[80vh] relative order-1 lg:order-2">
+                <div className="w-full lg:w-[40%] h-[50vh] lg:h-[80vh] relative order-1 lg:order-2">
                     <div className="relative w-full h-full">
                         {/* Mobile Image */}
                         <div className="block lg:hidden w-full h-full relative">

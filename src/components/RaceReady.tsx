@@ -60,10 +60,7 @@ export default function RaceReady() {
                             The Idea
                         </h3>
                         <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
-                            Just as uncompromising as full-scale Grand Prix machinery, Helium
-                            160 is engineered as a seamless and deliberate training
-                            instrument. Every component exists for one purpose: to sharpen
-                            the rider’s interaction with speed.
+                            Helium 160,  the art of acceleration, made tangible. It is philosophy in motion. A declaration that speed is not chaos, but clarity. That control is not restraint, but freedom. That every rider deserves the chance to experience the uncompromising truth of performance. It is not simply a motorcycle; it is Grand prix, distilled a deliberate training instrument, engineered with precision and purpose.
                         </p>
                     </motion.div>
 
@@ -76,15 +73,10 @@ export default function RaceReady() {
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
-                            Structure & Efficiency
+                            STRUCTURE & EFFICIENCY - DISCIPLINE OF LIGHTNESS
                         </h3>
                         <p className="text-gray-400 leading-relaxed text-lg">
-                            With an 82 kg total mass, a 51:49 front-to-rear weight
-                            distribution, and a carbon-fiber seat–tank structure acting as a
-                            primary load-bearing element, Helium 160 removes excess before
-                            it ever becomes a problem. There is no secondary subframe. No
-                            unnecessary reinforcement. Only structure where structure is
-                            required.
+                            At its core: a lightweight aluminum main frame, designed for strength without compromise. The carbon-fiber monocoque — a load-bearing structure (seat and tank section, top coul) that defines the machine's architecture. The Light weight Billet aluminum triple clamps and swingarm deliver the stiffness and performance required for a track bike . Aerospace-grade aluminum sprockets reduce weight further, ensuring every gram serves a purpose. An 82-kg masterpiece, unleashed for pure performance
                         </p>
                     </motion.div>
 
@@ -97,13 +89,10 @@ export default function RaceReady() {
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
-                            Control & Feedback
+                            CONTROL & FEEDBACK - HANDLING & DYNAMICS
                         </h3>
                         <p className="text-gray-400 leading-relaxed text-lg">
-                            Billet aluminium controls, a rigid aluminium chassis, and fully
-                            adjustable Maselli suspension work together to preserve
-                            stability while amplifying feedback. The result is a machine
-                            that responds instantly, predictably, and without correction.
+                            Having a weight distribution of 51-49, with the most optimal COG for flickability & straight line stability. Fully adjustable front forks and rear suspension work together to preserve stability while amplifying feedback. The result is a machine that responds instantly, predictably, and agile
                         </p>
                     </motion.div>
 

@@ -25,22 +25,40 @@ export const performanceStats = [
         unit: "F:R",
         detail: "Weight Dist.",
     },
+    {
+        label: "Seat Height",
+        value: "715",
+        unit: "mm",
+        detail: "Race Tuned",
+    },
+    {
+        label: "Wheelbase",
+        value: "1050",
+        unit: "mm",
+        detail: "Agile Geometry",
+    },
+    {
+        label: "Rims",
+        value: "R14",
+        unit: "",
+        detail: "Lightweight Alloy",
+    },
 ];
 
 export const extremePerformanceFaqs = [
     {
         id: "01",
-        question: "Purpose-Built Balance",
-        answer: "Helium 160 is engineered around balance before brute force. With a near-perfect 51:49 front-to-rear weight distribution and an ultra-light 82 kg total mass, the bike remains composed under braking, stable at lean, and predictable at the limit. This is not accidental geometry — it is intentional control, designed to let riders push harder with confidence, lap after lap",
+        question: "Carbon fibre monocoque (monolite)",
+        answer: "The seat and tank cover are integrated into a single carbon fiber monocoque, serving as a structural component without any underlying metal framework. This lightweight design enhances agility, enabling riders to lean aggressively into corners and achieve elbow-scraping precision.",
     },
     {
         id: "02",
-        question: "Structural Carbon Architecture",
-        answer: "The carbon fiber seat and tank are not cosmetic additions — they are load-bearing structural members. By eliminating a traditional metal subframe, Helium achieves exceptional rigidity with minimal weight. The result is a tighter feedback loop between rider and machine, where every input translates instantly into motion.",
+        question: "Lightweight aluminium frame (Edge X)",
+        answer: "Crafted from lightweight aluminum, this trellis main frame is engineered for uncompromising performance. Its unique design delivers razor‑sharp precision in cornering while maintaining exceptional straight‑line stability, giving riders the perfect balance of agility and control.",
     },
     {
         id: "03",
-        question: "Race-Ready Without Excess",
-        answer: "Every component exists for a reason. Billet aluminium triple clamps, swingarm, and clip-ons. Fully adjustable Maselli suspension front and rear. Compact 14-inch race wheels with a focused tyre profile. Nothing is overbuilt, nothing is wasted. Helium 160 delivers a true Mini GP experience — without the cost, complexity, or compromise of imported alternatives",
+        question: "Lightweight aluminium triple clamp & swingarm",
+        answer: "Our lightweight aluminum triple clamp and swingarm are precision‑engineered to deliver razor‑sharp handling, explosive agility, and the ultimate racing edge.",
     },
 ];

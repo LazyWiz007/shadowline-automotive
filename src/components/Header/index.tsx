@@ -69,8 +69,17 @@ export default function Navbar() {
                         />
                     </Link>
 
-                    {/* Animated Menu Toggle */}
-                    <MenuToggle isOpen={isMenuOpen} toggle={() => setIsMenuOpen(!isMenuOpen)} />
+                    {/* Right Side: Book Now + Menu Toggle */}
+                    <div className="flex items-center gap-6 md:gap-8 pointer-events-auto">
+                        <Link
+                            href="#"
+                            className="hidden md:block bg-white text-black text-sm md:text-base font-medium tracking-widest border border-white px-6 py-2 uppercase font-sans hover:bg-transparent hover:text-white transition-all duration-300"
+                        >
+                            Book Now
+                        </Link>
+                        {/* Animated Menu Toggle */}
+                        <MenuToggle isOpen={isMenuOpen} toggle={() => setIsMenuOpen(!isMenuOpen)} />
+                    </div>
                 </div>
             </motion.nav>
 
