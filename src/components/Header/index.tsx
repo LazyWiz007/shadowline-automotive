@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MenuToggle from "./MenuToggle";
+import { useBooking } from "@/context/BookingContext";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,6 +47,8 @@ export default function Navbar() {
         { name: "Factory tours", href: "#" },
     ];
 
+    const { openModal } = useBooking();
+
     return (
         <>
             <motion.nav
@@ -70,13 +73,13 @@ export default function Navbar() {
                     </Link>
 
                     {/* Right Side: Book Now + Menu Toggle */}
-                    <div className="flex items-center gap-6 md:gap-8 pointer-events-auto">
-                        <Link
-                            href="#"
-                            className="hidden md:block bg-white text-black text-sm md:text-base font-medium tracking-widest border border-white px-6 py-2 uppercase font-sans hover:bg-transparent hover:text-white transition-all duration-300"
+                    <div className="flex items-center gap-4 md:gap-8 pointer-events-auto">
+                        <button
+                            onClick={openModal}
+                            className="bg-white text-black text-xs md:text-base font-medium tracking-widest border border-white px-4 py-2 md:px-6 md:py-2 uppercase font-sans hover:bg-transparent hover:text-white transition-all duration-300"
                         >
                             Book Now
-                        </Link>
+                        </button>
                         {/* Animated Menu Toggle */}
                         <MenuToggle isOpen={isMenuOpen} toggle={() => setIsMenuOpen(!isMenuOpen)} />
                     </div>
@@ -124,6 +127,16 @@ export default function Navbar() {
                                         {link.name}
                                     </Link>
                                 ))}
+                                {/* Mobile Menu Book Now Button */}
+                                <button
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        openModal();
+                                    }}
+                                    className="md:hidden mt-6 text-2xl sm:text-4xl font-bold text-white uppercase tracking-tighter text-left hover:text-gray-300 transition-colors font-brand"
+                                >
+                                    Book Now
+                                </button>
                             </div>
 
                             {/* Right: Secondary Links */}

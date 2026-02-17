@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Michroma, Montserrat } from "next/font/google";
 import "./globals.css";
+import { BookingProvider } from "@/context/BookingContext";
+import BookingModal from "@/components/BookingModal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,7 +35,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${michroma.variable} ${montserrat.variable} antialiased`}
       >
-        {children}
+        <BookingProvider>
+          {children}
+          <BookingModal />
+        </BookingProvider>
       </body>
     </html>
   );
