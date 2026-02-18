@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const links = {
     product: ["Helium 160", "Accessories", "Apparel", "Configurator"],
@@ -8,101 +9,110 @@ const links = {
     support: ["Contact Us", "Warranty", "Find a Dealer", "Owner's Manual"],
 };
 
+// New data structures for the updated footer links
+const product = [
+    { name: "Helium 160", href: "/products/helium-160" },
+    { name: "Accessories", href: "/products/accessories" },
+    { name: "Apparel", href: "/products/apparel" },
+    { name: "Configurator", href: "/configurator" },
+];
+
+const company = [
+    { name: "About Shadowline", href: "/company/about" },
+    { name: "Engineering", href: "/company/engineering" },
+    { name: "Careers", href: "/company/careers" },
+    { name: "Press", href: "/company/press" },
+];
+
+const models = [ // Renamed from 'support' to 'models' based on usage in diff
+    { name: "Contact Us", href: "/support/contact" },
+    { name: "Warranty", href: "/support/warranty" },
+    { name: "Find a Dealer", href: "/support/dealers" },
+    { name: "Owner's Manual", href: "/support/manual" },
+];
+
+
 export default function Footer() {
     return (
-        <footer className="bg-[#050505] text-white pt-24 pb-12 overflow-hidden relative">
-            <div className="max-w-[1800px] mx-auto px-6 md:px-12 relative z-10">
-                <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-32 mb-32">
-                    {/* Left: Slogan */}
-                    <div className="w-full lg:w-1/2">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-6xl md:text-8xl lg:text-[7rem] leading-[0.9] font-brand font-bold uppercase tracking-tighter"
-                        >
-                            THE RIDE <br />
-                            NEVER <br />
-                            ENDS
-                        </motion.h1>
-                    </div>
+        <footer className="bg-white text-black font-sans pt-24 pb-8 overflow-hidden relative">
+            <div className="max-w-[1600px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-8 mb-24 relative z-10">
 
-                    {/* Right: Navigation Grid */}
-                    <div className="w-full lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-8">
-                        <div>
-                            <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Product</h4>
-                            <ul className="space-y-4">
-                                {links.product.map(link => (
-                                    <li key={link}>
-                                        <a href="#" className="font-sans text-sm font-medium hover:text-teal-400 transition-colors duration-300">{link}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Company</h4>
-                            <ul className="space-y-4">
-                                {links.company.map(link => (
-                                    <li key={link}>
-                                        <a href="#" className="font-sans text-sm font-medium hover:text-teal-400 transition-colors duration-300">{link}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Support</h4>
-                            <ul className="space-y-4">
-                                {links.support.map(link => (
-                                    <li key={link}>
-                                        <a href="#" className="font-sans text-sm font-medium hover:text-teal-400 transition-colors duration-300">{link}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                {/* Column 1: Brand & Address */}
+                <div className="flex flex-col gap-8">
+                    <Link href="/" className="inline-block">
+                        <span className="text-2xl font-brand font-black italic tracking-tighter uppercase text-black">
+                            SHADOWLINE
+                        </span>
+                    </Link>
+                    <div className="space-y-2 text-sm text-gray-600">
+                        <p>Unit 4, Industrial Estate</p>
+                        <p>Silverstone Circuit, UK</p>
+                        <p>NN12 8TL</p>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/10">
-                    {/* Socials */}
-                    <div className="flex space-x-6">
-                        {['Instagram', 'Twitter', 'YouTube', 'LinkedIn'].map((social) => (
-                            <a
-                                key={social}
-                                href="#"
-                                className="text-white hover:text-teal-400 transition-colors"
+                {/* Column 2: Product Links */}
+                <div>
+                    <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Product</h4>
+                    <div className="flex flex-col gap-4">
+                        {product.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-medium uppercase tracking-wider text-gray-500 hover:text-black transition-colors duration-300 w-fit"
                             >
-                                {/* Simple icon placeholders or text logic */}
-                                <span className="sr-only">{social}</span>
-                                <div className="w-5 h-5 bg-current mask-icon" />
-                                {/* Using text for simplicity if icons aren't imported, but assuming text fallback or actual icons later. 
-                                    For now reverting to text based on previous implementation but cleaner.
-                                */}
-                                <span className="text-xs font-bold uppercase tracking-wider font-brand">{social}</span>
-                            </a>
+                                {link.name}
+                            </Link>
                         ))}
                     </div>
+                </div>
 
-                    {/* Certifications / Logo Placeholder */}
-                    <div className="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
-                        {/* Placeholder for ISO/Brand Logos */}
-                        <div className="h-8 w-8 border border-white/30 rounded-full flex items-center justify-center text-[8px] font-mono">ISO</div>
-                        <div className="h-8 w-8 border border-white/30 rounded-full flex items-center justify-center text-[8px] font-mono">TUV</div>
+                {/* Column 3: Company Links */}
+                <div>
+                    <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Company</h4>
+                    <div className="flex flex-col gap-4">
+                        {company.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-medium uppercase tracking-wider text-gray-500 hover:text-black transition-colors duration-300 w-fit"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 text-[10px] text-gray-600 font-sans uppercase tracking-wider">
-                    <p>Copyright © {new Date().getFullYear()} - Shadowline Automotive</p>
-                    <div className="flex gap-6">
-                        <a href="#" className="hover:text-white transition-colors">Sitemap</a>
-                        <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Legal Links</a>
-                        <a href="#" className="hover:text-white transition-colors">Privacy</a>
+                {/* Column 4: Support Links */}
+                <div>
+                    <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Support</h4>
+                    <div className="flex flex-col gap-4">
+                        {models.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-medium uppercase tracking-wider text-gray-500 hover:text-black transition-colors duration-300 w-fit"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
-            {/* Background Glow */}
-            <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-teal-900/10 blur-[150px] rounded-full pointer-events-none" />
+
+            {/* Faint Background Grid Text */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-[0.02]">
+                <div className="w-[200%] h-[200%] absolute top-[-50%] left-[-50%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black to-transparent" />
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="max-w-[1600px] mx-auto px-6 relative z-10 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 uppercase tracking-widest">
+                <p>&copy; 2024 Shadowline Automotive. All rights reserved.</p>
+                <div className="flex gap-8">
+                    <Link href="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>
+                    <Link href="/terms" className="hover:text-black transition-colors">Terms of Use</Link>
+                </div>
+            </div>
         </footer>
     );
 }

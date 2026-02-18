@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-    --background: #050505;
-    /* Refined Black */
-    --foreground: #F5F5F7;
-    /* Ghost White */
-    --accent: #3BD9CC;
-    /* Teal 400 */
+    --background: #FFFFFF;
+    /* White */
+    --foreground: #050505;
+    /* Black */
+    --accent: #2A909B;
+    /* Darker Cyan for contrast */
     --brand-cyan: #2A909B;
     --brand-teal: #3BD9CC;
-    --menu-overlay: #637373;
-    /* Koenigsegg Slate */
-    --surface: #121212;
-    /* Darker Gray for cards */
-    --subtle: #262626;
-    /* Borders/Separators/Subtle Text */
+    --menu-overlay: #F5F5F7;
+    /* Light Grey */
+    --surface: #F5F5F7;
+    /* Light Grey for cards */
+    --subtle: #E5E5E5;
+    /* Light Borders */
 }
 
 @theme inline {

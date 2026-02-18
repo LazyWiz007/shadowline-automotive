@@ -15,7 +15,7 @@ export default function ExtremePerformance() {
     };
 
     return (
-        <section className="bg-black text-white py-24 min-h-screen flex items-center relative overflow-hidden">
+        <section className="bg-white text-black py-24 min-h-screen flex items-center relative overflow-hidden">
             <div className="max-w-[1600px] mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
 
                 {/* Left Content */}
@@ -24,7 +24,7 @@ export default function ExtremePerformance() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-white font-bold uppercase tracking-wider text-sm mb-12"
+                        className="text-black font-bold uppercase tracking-wider text-sm mb-12"
                     >
                         Extreme Performance
                     </motion.h4>
@@ -32,7 +32,7 @@ export default function ExtremePerformance() {
                     {/* FAQ List */}
                     <div className="flex flex-col gap-8">
                         {extremePerformanceFaqs.map((faq, index) => (
-                            <div key={faq.id} className="border-b border-gray-800 pb-8">
+                            <div key={faq.id} className="border-b border-gray-200 pb-8">
                                 <button
                                     onClick={() => toggleAccordion(index)}
                                     className="w-full flex items-start text-left gap-8 group"
@@ -41,7 +41,7 @@ export default function ExtremePerformance() {
                                         {faq.id}
                                     </span>
                                     <div className="flex-1">
-                                        <h3 className={`text-xl md:text-2xl font-normal transition-colors duration-300 ${openIndex === index ? "text-white" : "text-gray-400 group-hover:text-white"}`}>
+                                        <h3 className={`text-xl md:text-2xl font-normal transition-colors duration-300 ${openIndex === index ? "text-black" : "text-gray-500 group-hover:text-black"}`}>
                                             {faq.question}
                                         </h3>
                                         <AnimatePresence>
@@ -53,7 +53,7 @@ export default function ExtremePerformance() {
                                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                                     className="overflow-hidden"
                                                 >
-                                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-md">
+                                                    <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-md">
                                                         {faq.answer}
                                                     </p>
                                                 </motion.div>
@@ -64,7 +64,7 @@ export default function ExtremePerformance() {
                                         animate={{ rotate: openIndex === index ? 90 : 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <ArrowRight className={`w-5 h-5 ${openIndex === index ? "text-white" : "text-gray-600"}`} />
+                                        <ArrowRight className={`w-5 h-5 ${openIndex === index ? "text-black" : "text-gray-400"}`} />
                                     </motion.div>
                                 </button>
                             </div>
@@ -90,7 +90,7 @@ export default function ExtremePerformance() {
                             className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                         />
                         {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-50" />
                     </motion.div>
                 </div>
 

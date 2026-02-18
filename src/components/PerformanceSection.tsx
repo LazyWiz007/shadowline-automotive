@@ -7,7 +7,7 @@ import { performanceStats } from "@/lib/data";
 
 export default function PerformanceSection() {
     return (
-        <section className="relative min-h-screen text-white overflow-hidden py-24">
+        <section className="relative min-h-screen text-black overflow-hidden py-24">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -17,7 +17,7 @@ export default function PerformanceSection() {
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-white/60" />
             </div>
 
             <div className="max-w-[1600px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center relative z-10">
@@ -36,7 +36,7 @@ export default function PerformanceSection() {
                                 Excellence
                             </span>
                         </h2>
-                        <p className="text-gray-400 font-sans text-sm md:text-base max-w-md leading-relaxed">
+                        <p className="text-gray-600 font-sans text-sm md:text-base max-w-md leading-relaxed">
                             Every curve, every component is engineered for pure speed and control. The Helium 160 redefines the power-to-weight ratio.
                         </p>
                     </motion.div>
@@ -52,14 +52,14 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-3xl lg:text-3xl xl:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
+                                    <span className="text-3xl lg:text-3xl xl:text-5xl font-brand font-black text-black group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
                                         {stat.value}
                                     </span>
-                                    <span className="text-lg lg:text-base xl:text-xl font-brand font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
+                                    <span className="text-lg lg:text-base xl:text-xl font-brand font-bold text-gray-500 group-hover:text-black transition-colors duration-300">
                                         {stat.unit}
                                     </span>
                                 </div>
-                                <h4 className="text-white font-bold uppercase tracking-widest text-xs lg:text-[10px] xl:text-sm mb-1 whitespace-nowrap">
+                                <h4 className="text-black font-bold uppercase tracking-widest text-xs lg:text-[10px] xl:text-sm mb-1 whitespace-nowrap">
                                     {stat.label}
                                 </h4>
                                 <p className="text-gray-500 text-[10px] xl:text-xs font-medium uppercase tracking-wide whitespace-nowrap">
@@ -86,7 +86,7 @@ export default function PerformanceSection() {
                         {/* Desktop Image */}
 
                         {/* Gradient Overlay for blending */}
-                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-white via-transparent to-transparent" />
                     </div>
                 </div>
             </div>

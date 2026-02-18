@@ -75,11 +75,12 @@ export default function BookingModal() {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed inset-0 m-auto z-[101] w-full max-w-lg h-fit max-h-[90vh] overflow-y-auto bg-[#111] border border-white/10 p-6 md:p-8 rounded-2xl shadow-2xl"
+                        className="fixed inset-0 m-auto z-[101] w-full max-w-lg h-fit max-h-[90vh] overflow-y-auto bg-white p-8 md:p-12 rounded-2xl shadow-2xl"
                     >
                         <button
-                            onClick={handleClose}
-                            className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
+                            onClick={closeModal}
+                            className="absolute top-6 right-6 text-gray-400 hover:text-black transition-colors"
+                            aria-label="Close modal"
                         >
                             <X size={24} />
                         </button>
@@ -87,77 +88,79 @@ export default function BookingModal() {
                         {step === "form" ? (
                             <div className="space-y-6">
                                 <div className="space-y-2 text-center">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white font-brand uppercase tracking-tighter">
-                                        Secure Your Slot
+                                    <h2 className="text-3xl md:text-4xl font-brand font-black uppercase italic tracking-tighter text-black mb-2">
+                                        Book Your <br />
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal">
+                                            Experience
+                                        </span>
                                     </h2>
-                                    <p className="text-white/60 text-sm">
-                                        Enter your details below to start the booking process.
+                                    <p className="text-gray-600 font-sans text-sm mb-8">
+                                        Enter your details below to schedule a private consultation or test ride.
                                     </p>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     {/* Name */}
                                     <div className="space-y-1">
-                                        <label className="text-xs uppercase tracking-widest text-white/60 ml-1">
+                                        <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
                                             Full Name
                                         </label>
                                         <input
                                             type="text"
-                                            required
+                                            id="name"
+                                            name="name"
                                             value={formData.name}
-                                            onChange={(e) =>
-                                                setFormData({ ...formData, name: e.target.value })
-                                            }
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/40 transition-colors"
+                                            onChange={handleInputChange}
+                                            required
+                                            className="w-full bg-gray-100 border border-gray-200 text-black px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
                                             placeholder="John Doe"
                                         />
                                     </div>
 
                                     {/* Email */}
                                     <div className="space-y-1">
-                                        <label className="text-xs uppercase tracking-widest text-white/60 ml-1">
+                                        <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
                                             Email Address
                                         </label>
                                         <input
                                             type="email"
-                                            required
+                                            id="email"
+                                            name="email"
                                             value={formData.email}
-                                            onChange={(e) =>
-                                                setFormData({ ...formData, email: e.target.value })
-                                            }
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/40 transition-colors"
+                                            onChange={handleInputChange}
+                                            required
+                                            className="w-full bg-gray-100 border border-gray-200 text-black px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
                                             placeholder="john@example.com"
                                         />
                                     </div>
 
                                     {/* Phone */}
                                     <div className="space-y-1">
-                                        <label className="text-xs uppercase tracking-widest text-white/60 ml-1">
+                                        <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
                                             Phone Number
                                         </label>
-                                        <div className="flex gap-2">
+                                        <div className="flex">
                                             <select
+                                                name="countryCode"
                                                 value={formData.countryCode}
-                                                onChange={(e) =>
-                                                    setFormData({ ...formData, countryCode: e.target.value })
-                                                }
-                                                className="bg-white/5 border border-white/10 rounded-lg px-3 py-3 text-white focus:outline-none focus:border-white/40 transition-colors cursor-pointer appearance-none min-w-[80px]"
+                                                onChange={handleInputChange}
+                                                className="bg-gray-100 border border-gray-200 text-black px-3 py-3 w-24 focus:outline-none focus:border-brand-cyan transition-colors border-r-0"
                                             >
                                                 {countryCodes.map((c) => (
-                                                    <option key={c.code} value={c.code} className="bg-[#111] text-white">
-                                                        {c.code} ({c.country})
+                                                    <option key={c.code} value={c.code} className="bg-white text-black">
+                                                        {c.code}
                                                     </option>
                                                 ))}
                                             </select>
                                             <input
                                                 type="tel"
-                                                required
+                                                id="phone"
+                                                name="phone"
                                                 value={formData.phone}
-                                                onChange={(e) =>
-                                                    setFormData({ ...formData, phone: e.target.value })
-                                                }
-                                                className="flex-1 w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/40 transition-colors"
-                                                placeholder="1234567890"
+                                                onChange={handleInputChange}
+                                                required
+                                                className="flex-1 bg-gray-100 border border-gray-200 text-black px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
+                                                placeholder="123 456 7890"
                                             />
                                         </div>
                                     </div>
@@ -167,43 +170,49 @@ export default function BookingModal() {
                                         <Turnstile
                                             sitekey="0x4AAAAAAA9_E1r8v7f_K8lP" // Replace with your actual site key
                                             onVerify={(token) => setTurnstileToken(token)}
-                                            theme="dark"
+                                            theme="light" // Changed to light theme for white background
                                         />
                                     </div>
 
                                     <button
                                         type="submit"
                                         disabled={isSubmitting || !turnstileToken}
-                                        className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-4"
+                                        className="w-full bg-black text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                     >
-                                        {isSubmitting ? "Processing..." : "Submit Request"}
+                                        {isSubmitting ? (
+                                            <>
+                                                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                Processing...
+                                            </>
+                                        ) : (
+                                            "Confirm Booking"
+                                        )}
                                     </button>
                                 </form>
                             </div>
                         ) : (
-                            <div className="flex flex-col items-center justify-center py-12 space-y-6 text-center">
-                                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center">
-                                    <Check className="w-10 h-10 text-green-500" />
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-center py-12"
+                            >
+                                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
+                                    <Check size={32} />
                                 </div>
-                                <div className="space-y-2">
-                                    <h3 className="text-2xl font-bold text-white font-brand uppercase">
-                                        Request Received
-                                    </h3>
-                                    <p className="text-white/60 max-w-xs mx-auto">
-                                        Thank you for your interest. Our team will contact you shortly to finalize your booking.
-                                    </p>
-                                </div>
+                                <h3 className="text-2xl font-brand font-bold uppercase text-black mb-4">Request Received</h3>
+                                <p className="text-gray-600 font-sans">
+                                    Thank you for your interest. Our team will contact you shortly to schedule your consultation.
+                                </p>
                                 <button
                                     onClick={handleClose}
-                                    className="bg-white/10 text-white px-8 py-3 rounded-lg hover:bg-white/20 transition-colors uppercase tracking-widest text-sm font-medium"
+                                    className="mt-8 bg-gray-100 text-black px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors uppercase tracking-widest text-sm font-medium"
                                 >
                                     Close
                                 </button>
-                            </div>
+                            </motion.div>
                         )}
-                    </motion.div>
-                </>
+                    </>
             )}
-        </AnimatePresence>
-    );
+                </AnimatePresence>
+            );
 }

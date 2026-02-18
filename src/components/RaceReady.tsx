@@ -8,7 +8,7 @@ export default function RaceReady() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section ref={containerRef} className="bg-black text-white relative">
+        <section ref={containerRef} className="bg-white text-black relative">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
                 {/* Left Column: Sticky Title */}
                 <div className="hidden lg:flex h-screen sticky top-0 flex-col justify-center">
@@ -20,16 +20,16 @@ export default function RaceReady() {
                     >
                         <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight">
                             Become <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">
                                 Race Ready.
                             </span>
                         </h2>
                         <div className="mt-12 w-48">
-                            <span className="block text-sm font-mono font-bold text-white mb-2 tracking-widest">
+                            <span className="block text-sm font-mono font-bold text-black mb-2 tracking-widest">
                                 0{activeSection}
                             </span>
-                            <div className="w-full h-px bg-white/30 mb-2" />
-                            <span className="block text-sm font-mono font-bold text-white/50 tracking-widest">
+                            <div className="w-full h-px bg-black/30 mb-2" />
+                            <span className="block text-sm font-mono font-bold text-black/50 tracking-widest">
                                 03
                             </span>
                         </div>
@@ -40,7 +40,7 @@ export default function RaceReady() {
                 <div className="lg:hidden pt-24">
                     <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight">
                         Become <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">
                             Race Ready
                         </span>
                     </h2>
@@ -56,10 +56,10 @@ export default function RaceReady() {
                         onViewportEnter={() => setActiveSection(1)}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
+                        <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-black">
                             The Idea
                         </h3>
-                        <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
+                        <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
                             Helium 160,  the art of acceleration, made tangible. It is philosophy in motion. A declaration that speed is not chaos, but clarity. That control is not restraint, but freedom. That every rider deserves the chance to experience the uncompromising truth of performance. It is not simply a motorcycle; it is Grand prix, distilled a deliberate training instrument, engineered with precision and purpose.
                         </p>
                     </motion.div>
@@ -72,10 +72,10 @@ export default function RaceReady() {
                         onViewportEnter={() => setActiveSection(2)}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
+                        <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-black">
                             STRUCTURE & EFFICIENCY - DISCIPLINE OF LIGHTNESS
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-lg">
+                        <p className="text-gray-600 leading-relaxed text-lg">
                             At its core: a lightweight aluminum main frame, designed for strength without compromise. The carbon-fiber monocoque — a load-bearing structure (seat and tank section, top coul) that defines the machine's architecture. The Light weight Billet aluminum triple clamps and swingarm deliver the stiffness and performance required for a track bike . Aerospace-grade aluminum sprockets reduce weight further, ensuring every gram serves a purpose. An 82-kg masterpiece, unleashed for pure performance
                         </p>
                     </motion.div>
@@ -88,10 +88,10 @@ export default function RaceReady() {
                         onViewportEnter={() => setActiveSection(3)}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
+                        <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-black">
                             CONTROL & FEEDBACK - HANDLING & DYNAMICS
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-lg">
+                        <p className="text-gray-600 leading-relaxed text-lg">
                             Having a weight distribution of 51-49, with the most optimal COG for flickability & straight line stability. Fully adjustable front forks and rear suspension work together to preserve stability while amplifying feedback. The result is a machine that responds instantly, predictably, and agile
                         </p>
                     </motion.div>
@@ -102,14 +102,14 @@ export default function RaceReady() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="pt-24 border-t border-white/10"
+                        className="pt-24 border-t border-black/10"
                     >
                         <div className="grid grid-cols-1 gap-8">
                             <div>
-                                <p className="text-2xl md:text-3xl font-light italic text-white mb-2">
+                                <p className="text-2xl md:text-3xl font-light italic text-black mb-2">
                                     How close does this feel to racing at the highest level?
                                 </p>
-                                <p className="text-gray-400 mb-8">
+                                <p className="text-gray-600 mb-8">
                                     Spend time on track. Watch the data. The answer becomes obvious.
                                 </p>
                                 <p className="text-4xl md:text-5xl font-brand font-black uppercase italic tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal text-right">

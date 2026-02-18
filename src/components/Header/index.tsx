@@ -55,10 +55,10 @@ export default function Navbar() {
                 initial={{ y: 0 }}
                 animate={{
                     y: isVisible ? 0 : "-100%",
-                    backgroundColor: isScrolled ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
+                    backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0)"
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="fixed top-0 left-0 right-0 z-[70] py-4 px-6 md:py-8 md:px-12 pointer-events-auto"
+                className="fixed top-0 left-0 right-0 z-[70] py-4 px-6 md:py-8 md:px-12 pointer-events-auto backdrop-blur-sm"
             >
                 <div className="flex items-center justify-between w-full pointer-events-auto">
                     {/* Logo */}
@@ -76,7 +76,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-4 md:gap-8 pointer-events-auto">
                         <button
                             onClick={openModal}
-                            className="bg-white text-black text-xs md:text-base font-medium tracking-widest border border-white px-4 py-2 md:px-6 md:py-2 uppercase font-sans hover:bg-transparent hover:text-white transition-all duration-300"
+                            className="bg-black text-white text-xs md:text-base font-medium tracking-widest border border-black px-4 py-2 md:px-6 md:py-2 uppercase font-sans hover:bg-transparent hover:text-black transition-all duration-300"
                         >
                             Book Now
                         </button>
@@ -94,7 +94,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-[60] bg-black flex flex-col justify-between p-6 md:p-12"
+                        className="fixed inset-0 z-[60] bg-white flex flex-col justify-between p-6 md:p-12"
                     >
                         {/* Header in Overlay - Logo duplication for layout balance if needed, but nav is z-70 so visible */}
                         {/* We just need spacing here effectively */}
@@ -122,7 +122,7 @@ export default function Navbar() {
                                         key={link.name}
                                         href={link.href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-3xl sm:text-5xl md:text-8xl font-bold text-white uppercase tracking-tighter transition-all duration-300 group-hover:opacity-60 hover:!opacity-100 font-brand leading-none"
+                                        className="text-3xl sm:text-5xl md:text-8xl font-bold text-black uppercase tracking-tighter transition-all duration-300 group-hover:opacity-60 hover:!opacity-100 font-brand leading-none"
                                     >
                                         {link.name}
                                     </Link>
@@ -133,7 +133,7 @@ export default function Navbar() {
                                         setIsMenuOpen(false);
                                         openModal();
                                     }}
-                                    className="md:hidden mt-6 text-2xl sm:text-4xl font-bold text-white uppercase tracking-tighter text-left hover:text-gray-300 transition-colors font-brand"
+                                    className="md:hidden mt-6 text-2xl sm:text-4xl font-bold text-black uppercase tracking-tighter text-left hover:text-gray-600 transition-colors font-brand"
                                 >
                                     Book Now
                                 </button>
@@ -144,14 +144,14 @@ export default function Navbar() {
                                 {/* Left Column: Corporate/Info */}
                                 <div className="flex flex-col space-y-3 md:space-y-4">
                                     {secondaryLinks.slice(3, 6).map(link => (
-                                        <Link key={link.name} href={link.href} className="block text-sm md:text-lg text-gray-200 hover:text-white transition-colors font-sans">{link.name}</Link>
+                                        <Link key={link.name} href={link.href} className="block text-sm md:text-lg text-gray-600 hover:text-black transition-colors font-sans">{link.name}</Link>
                                     ))}
                                 </div>
 
                                 {/* Right Column: Commerce/Contact */}
                                 <div className="flex flex-col space-y-3 md:space-y-4">
                                     {secondaryLinks.slice(0, 3).map(link => (
-                                        <Link key={link.name} href={link.href} className="block text-sm md:text-lg text-gray-200 hover:text-white transition-colors font-sans">{link.name}</Link>
+                                        <Link key={link.name} href={link.href} className="block text-sm md:text-lg text-gray-600 hover:text-black transition-colors font-sans">{link.name}</Link>
                                     ))}
                                 </div>
                             </div>
