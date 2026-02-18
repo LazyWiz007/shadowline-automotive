@@ -25,8 +25,8 @@ export default function Hero() {
                     className="object-cover hidden md:block"
                 />
 
-                {/* Refined Gradient - White for Light Mode */}
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.3)_40%,transparent_100%)] z-10" />
+                {/* Refined Gradient - Black for Dark Mode */}
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.3)_40%,transparent_100%)] z-10" />
             </div>
 
             {/* Content Content - Aligned with Navbar */}
@@ -35,7 +35,7 @@ export default function Hero() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="text-2xl sm:text-7xl md:text-8xl lg:text-3xl font-extrabold tracking-wide uppercase italic text-black drop-shadow-sm font-brand leading-none"
+                    className="text-2xl sm:text-7xl md:text-8xl lg:text-3xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none"
                 >
                     Helium 160
                 </motion.h1>

@@ -7,7 +7,7 @@ import { performanceStats } from "@/lib/data";
 
 export default function PerformanceSection() {
     return (
-        <section className="relative min-h-screen text-black overflow-hidden py-24">
+        <section className="relative min-h-screen text-white overflow-hidden py-24">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -17,7 +17,7 @@ export default function PerformanceSection() {
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-white/60" />
+                <div className="absolute inset-0 bg-black/60" />
             </div>
 
             <div className="max-w-[1600px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center relative z-10">
@@ -36,11 +36,10 @@ export default function PerformanceSection() {
                                 Excellence
                             </span>
                         </h2>
-                        <p className="text-gray-600 font-sans text-sm md:text-base max-w-md leading-relaxed">
+                        <p className="text-gray-300 font-sans text-sm md:text-base max-w-md leading-relaxed mb-8">
                             Every curve, every component is engineered for pure speed and control. The Helium 160 redefines the power-to-weight ratio.
                         </p>
                     </motion.div>
-
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 lg:gap-x-12 xl:gap-x-24 gap-y-20 lg:gap-y-32">
                         {performanceStats.map((stat, index) => (
                             <motion.div
@@ -52,22 +51,41 @@ export default function PerformanceSection() {
                                 className="group"
                             >
                                 <div className="flex items-baseline gap-1 mb-2">
-                                    <span className="text-3xl lg:text-3xl xl:text-5xl font-brand font-black text-black group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
+                                    <span className="text-3xl lg:text-3xl xl:text-5xl font-brand font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-brand-teal transition-all duration-300">
                                         {stat.value}
                                     </span>
-                                    <span className="text-lg lg:text-base xl:text-xl font-brand font-bold text-gray-500 group-hover:text-black transition-colors duration-300">
+                                    <span className="text-lg lg:text-base xl:text-xl font-brand font-bold text-gray-400 group-hover:text-white transition-colors duration-300">
                                         {stat.unit}
                                     </span>
                                 </div>
-                                <h4 className="text-black font-bold uppercase tracking-widest text-xs lg:text-[10px] xl:text-sm mb-1 whitespace-nowrap">
+                                <h4 className="text-white font-bold uppercase tracking-widest text-xs lg:text-[10px] xl:text-sm mb-1 whitespace-nowrap">
                                     {stat.label}
                                 </h4>
-                                <p className="text-gray-500 text-[10px] xl:text-xs font-medium uppercase tracking-wide whitespace-nowrap">
+                                <p className="text-gray-400 text-[10px] xl:text-xs font-medium uppercase tracking-wide whitespace-nowrap">
                                     {stat.detail}
                                 </p>
                             </motion.div>
                         ))}
                     </div>
+                    <button className="group relative inline-block mt-8">
+                        {/* Border Layer - White/30 to White on Hover */}
+                        <div
+                            className="absolute inset-0 bg-white/30 group-hover:bg-white transition-colors duration-300"
+                            style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
+                        />
+                        {/* Content Layer - Black Background */}
+                        <div
+                            className="relative bg-black px-6 py-3 m-[1px] transition-colors duration-300 group-hover:bg-white group-hover:text-black"
+                            style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
+                        >
+                            <span className="flex items-center gap-3 text-white font-brand font-bold uppercase tracking-widest text-xs group-hover:text-black transition-colors duration-300">
+                                Technical Specifications
+                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
                 </div>
 
                 {/* Right Content - Image */}
@@ -86,7 +104,7 @@ export default function PerformanceSection() {
                         {/* Desktop Image */}
 
                         {/* Gradient Overlay for blending */}
-                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-white via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black via-transparent to-transparent" />
                     </div>
                 </div>
             </div>

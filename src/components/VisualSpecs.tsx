@@ -70,7 +70,7 @@ const specsBottom = [
 
 export default function VisualSpecs() {
     return (
-        <section className="hidden lg:block relative min-h-screen bg-white text-black overflow-hidden py-24 lg:py-0">
+        <section className="hidden lg:block relative min-h-screen bg-black text-white overflow-hidden py-24 lg:py-0">
             {/* Main Background Image - Full Canvas */}
             <div className="absolute inset-0 z-0 h-full">
                 <div className="sticky top-0 h-screen w-full overflow-hidden">
@@ -94,8 +94,8 @@ export default function VisualSpecs() {
                             priority
                         />
                     </div>
-                    {/* Radial gradient to highlight the bike in center and fade edges to white for text */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_20%,rgba(255,255,255,0.8)_85%)]" />
+                    {/* Radial gradient to highlight the bike in center and fade edges to black for text */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.8)_85%)]" />
                 </div>
             </div>
 
@@ -113,8 +113,8 @@ export default function VisualSpecs() {
                                 transition={{ delay: i * 0.1 }}
                                 className="group cursor-pointer pointer-events-auto"
                             >
-                                <h4 className="text-black font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(0,0,0,0.3)]">{spec.label}</h4>
-                                <p className="text-gray-700 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,0.3)]">{spec.label}</h4>
+                                <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -130,8 +130,8 @@ export default function VisualSpecs() {
                                 transition={{ delay: i * 0.1 }}
                                 className="group cursor-pointer pointer-events-auto"
                             >
-                                <h4 className="text-black font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(0,0,0,0.3)]">{spec.label}</h4>
-                                <p className="text-gray-700 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,0.3)]">{spec.label}</h4>
+                                <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -147,8 +147,8 @@ export default function VisualSpecs() {
                                 transition={{ delay: 0.5 + i * 0.1 }}
                                 className="group cursor-pointer pointer-events-auto"
                             >
-                                <h4 className="text-black font-brand font-bold uppercase tracking-widest text-xl mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(0,0,0,0.3)]">{spec.label}</h4>
-                                <p className="text-gray-700 font-sans text-xl font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <h4 className="text-white font-brand font-bold uppercase tracking-widest text-xl mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,0.3)]">{spec.label}</h4>
+                                <p className="text-gray-300 font-sans text-xl font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -164,10 +164,10 @@ export default function VisualSpecs() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.05 }}
-                        className="text-left bg-white/50 p-6 backdrop-blur-sm border-l-2 border-black/20 group cursor-pointer shadow-sm"
+                        className="text-left bg-white/5 p-6 backdrop-blur-sm border-l-2 border-white/20 group cursor-pointer shadow-sm"
                     >
-                        <h4 className="text-black font-brand font-bold uppercase tracking-widest text-sm mb-2 group-hover:[text-shadow:0_0_10px_rgba(0,0,0,0.3)]">{spec.label}</h4>
-                        <p className="text-gray-700 font-sans text-xs font-medium leading-relaxed tracking-wide">{spec.detail}</p>
+                        <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 group-hover:[text-shadow:0_0_10px_rgba(255,255,255,0.3)]">{spec.label}</h4>
+                        <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide">{spec.detail}</p>
                     </motion.div>
                 ))}
             </div>

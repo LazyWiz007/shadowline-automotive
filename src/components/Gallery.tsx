@@ -34,7 +34,7 @@ export default function Gallery() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter text-white"
+                    className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter text-black"
                 >
                     Pure <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal">Aesthetics</span>
                 </motion.h2>
