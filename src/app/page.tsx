@@ -13,9 +13,9 @@ export default function Home() {
       <Header />
       <Hero />
       <RaceReady />
+      <PerformanceSection />
       <VisualSpecs />
       <ExtremePerformance />
-      <PerformanceSection />
       <Gallery />
       <Footer />
     </main>
