@@ -57,6 +57,14 @@ export default function BookingModal() {
         }, 300);
     };
 
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
     return (
         <AnimatePresence>
             {isModalOpen && (
@@ -211,8 +219,9 @@ export default function BookingModal() {
                                 </button>
                             </motion.div>
                         )}
-                    </>
+                    </motion.div>
+                </>
             )}
-                </AnimatePresence>
-            );
+        </AnimatePresence>
+    );
 }
