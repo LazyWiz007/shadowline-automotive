@@ -29,7 +29,7 @@ const images = [
 export default function Gallery() {
     return (
         <section className="bg-white py-24 min-h-screen relative overflow-hidden">
-            <div className="max-w-[1920px] mx-auto px-4 md:px-8">
+            <div className="max-w-[1920px] mx-auto px-4 md:px-8 mb-16 md:mb-24">
                 <motion.h2
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}

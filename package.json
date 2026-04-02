@@ -11,6 +11,9 @@
     "test:watch": "vitest --watch"
   },
   "dependencies": {
+    "@chenglou/pretext": "^0.0.4",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.31.0",
     "lucide-react": "^0.563.0",
@@ -18,7 +21,8 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-turnstile": "^1.1.5",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

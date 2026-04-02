@@ -34,7 +34,7 @@ export default function Navbar() {
     const mainLinks = [
         { name: "Helium 160", href: "#" },
         { name: "Technology", href: "#technology" },
-        { name: "About", href: "#about" },
+        { name: "About", href: "/about" },
         { name: "History", href: "#history" },
     ];
 

@@ -83,11 +83,11 @@ export default function BookingModal() {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed inset-0 m-auto z-[101] w-full max-w-lg h-fit max-h-[90vh] overflow-y-auto bg-white p-8 md:p-12 rounded-2xl shadow-2xl"
+                        className="fixed inset-0 m-auto z-[101] w-full max-w-lg h-fit max-h-[90vh] overflow-y-auto bg-[#0A0A0A] border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl"
                     >
                         <button
                             onClick={closeModal}
-                            className="absolute top-6 right-6 text-gray-400 hover:text-black transition-colors"
+                            className="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors"
                             aria-label="Close modal"
                         >
                             <X size={24} />
@@ -96,13 +96,13 @@ export default function BookingModal() {
                         {step === "form" ? (
                             <div className="space-y-6">
                                 <div className="space-y-2 text-center">
-                                    <h2 className="text-3xl md:text-4xl font-brand font-black uppercase italic tracking-tighter text-black mb-2">
+                                    <h2 className="text-3xl md:text-4xl font-brand font-black uppercase italic tracking-tighter text-white mb-2">
                                         Book Your <br />
                                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal">
                                             Experience
                                         </span>
                                     </h2>
-                                    <p className="text-gray-600 font-sans text-sm mb-8">
+                                    <p className="text-gray-400 font-sans text-sm mb-8">
                                         Enter your details below to schedule a private consultation or test ride.
                                     </p>
                                 </div>
@@ -120,7 +120,7 @@ export default function BookingModal() {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full bg-gray-100 border border-gray-200 text-black px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
+                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
                                             placeholder="John Doe"
                                         />
                                     </div>
@@ -137,7 +137,7 @@ export default function BookingModal() {
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full bg-gray-100 border border-gray-200 text-black px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
+                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
                                             placeholder="john@example.com"
                                         />
                                     </div>
@@ -152,10 +152,10 @@ export default function BookingModal() {
                                                 name="countryCode"
                                                 value={formData.countryCode}
                                                 onChange={handleInputChange}
-                                                className="bg-gray-100 border border-gray-200 text-black px-3 py-3 w-24 focus:outline-none focus:border-brand-cyan transition-colors border-r-0"
+                                                className="bg-white/5 border border-white/10 text-white px-3 py-3 w-24 focus:outline-none focus:border-brand-cyan transition-colors border-r-0"
                                             >
                                                 {countryCodes.map((c) => (
-                                                    <option key={c.code} value={c.code} className="bg-white text-black">
+                                                    <option key={c.code} value={c.code} className="bg-black text-white">
                                                         {c.code}
                                                     </option>
                                                 ))}
@@ -167,7 +167,7 @@ export default function BookingModal() {
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="flex-1 bg-gray-100 border border-gray-200 text-black px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
+                                                className="flex-1 bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
                                                 placeholder="123 456 7890"
                                             />
                                         </div>
@@ -178,14 +178,14 @@ export default function BookingModal() {
                                         <Turnstile
                                             sitekey="0x4AAAAAAA9_E1r8v7f_K8lP" // Replace with your actual site key
                                             onVerify={(token) => setTurnstileToken(token)}
-                                            theme="light" // Changed to light theme for white background
+                                            theme="dark" // Changed to dark theme for dark background
                                         />
                                     </div>
 
                                     <button
                                         type="submit"
                                         disabled={isSubmitting || !turnstileToken}
-                                        className="w-full bg-black text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                        className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                     >
                                         {isSubmitting ? (
                                             <>
@@ -207,13 +207,13 @@ export default function BookingModal() {
                                 <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
                                     <Check size={32} />
                                 </div>
-                                <h3 className="text-2xl font-brand font-bold uppercase text-black mb-4">Request Received</h3>
-                                <p className="text-gray-600 font-sans">
+                                <h3 className="text-2xl font-brand font-bold uppercase text-white mb-4">Request Received</h3>
+                                <p className="text-gray-400 font-sans">
                                     Thank you for your interest. Our team will contact you shortly to schedule your consultation.
                                 </p>
                                 <button
                                     onClick={handleClose}
-                                    className="mt-8 bg-gray-100 text-black px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors uppercase tracking-widest text-sm font-medium"
+                                    className="mt-8 bg-white/10 text-white px-8 py-3 rounded-lg hover:bg-white/20 transition-colors uppercase tracking-widest text-sm font-medium"
                                 >
                                     Close
                                 </button>
