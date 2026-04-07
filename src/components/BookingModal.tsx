@@ -14,6 +14,7 @@ export default function BookingModal() {
         email: "",
         phone: "",
         countryCode: "+91",
+        teamName: "",
     });
     const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,7 +53,7 @@ export default function BookingModal() {
         // Reset state after close animation finishes (approx)
         setTimeout(() => {
             setStep("form");
-            setFormData({ name: "", email: "", phone: "", countryCode: "+91" });
+            setFormData({ name: "", email: "", phone: "", countryCode: "+91", teamName: "" });
             setTurnstileToken(null);
         }, 300);
     };
@@ -122,6 +123,22 @@ export default function BookingModal() {
                                             required
                                             className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
                                             placeholder="John Doe"
+                                        />
+                                    </div>
+
+                                    {/* Team Name */}
+                                    <div className="space-y-1">
+                                        <label htmlFor="teamName" className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                                            Team Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="teamName"
+                                            name="teamName"
+                                            value={formData.teamName}
+                                            onChange={handleInputChange}
+                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
+                                            placeholder="Shadowline Racing"
                                         />
                                     </div>
 

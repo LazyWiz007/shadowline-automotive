@@ -15,7 +15,10 @@ function GenesisSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-6 md:px-12 bg-black overflow-hidden">
       {/* Background glow or subtle styling */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/40 via-black to-black opacity-60"></div>
+      <div className="absolute inset-0 z-0">
+        <Image src="/team/garage pic.jpg" alt="Garage" fill className="object-cover opacity-20 hover:opacity-30 transition-opacity duration-1000" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/90"></div>
+      </div>
       
       <motion.div 
         initial="hidden"
@@ -32,13 +35,13 @@ function GenesisSection() {
           Our journey began when five distinct passions converged into a singular, uncompromising vision: to build India’s future in performance.
         </p>
         <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-          It started with a father. Watching his children race with fire in their hearts, he realized the ultimate stage for their dreams didn&apos;t exist—so he set out to build a platform where raw passion would never be forced to fade.
+          Our story isn&apos;t about a single founder—it&apos;s about a collective uprising. Five co-founders, each masters of their own craft, united by the realization that the ultimate stage for true Indian performance machines simply didn&apos;t exist. Together, they set out to build a platform where raw passion would never be forced to fade.
         </p>
         <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-          He was joined by a visionary motorcycle designer, restless to shatter boundaries and sketch lines that could finally breathe without compromise. Together with a ride dynamics specialist dedicated to elevating handling and behavior, they engineered a premium connection to the road—delivering an experience as profoundly refined as it is thrilling.
+          The team brought together a father whose fire for racing matched his children&apos;s, and a visionary motorcycle designer restless to shatter boundaries and sketch lines that could finally breathe without compromise. They were joined by a ride dynamics specialist dedicated to elevating handling—engineering a premium connection to the road.
         </p>
         <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-          Beside them stood a mind steeped in machinery and material science, driven to exploit the extreme limits of aerospace-grade metals and racing composites, pushing the boundaries of pure lightness and strength. Completing the circle was an automotive photographer who had spent years immortalizing the world’s finest machines through a lens, now determined to bring his own vision to life in metal and carbon.
+          Rounding out the founding team was a mastermind in material science, driven to exploit the extreme limits of aerospace-grade metals and racing composites, alongside an automotive photographer who had spent years immortalizing the world’s finest machines—now determined to bring their collective vision to life in metal and carbon.
         </p>
       </motion.div>
     </section>
@@ -46,73 +49,42 @@ function GenesisSection() {
 }
 
 function TeamSection() {
-  const team = [
-    {
-      role: "The Visionary Founder",
-      image: "/team/founder.png",
-      story: "A father who watched his children race with fire in their hearts, only to realize the ultimate stage for their dreams didn't exist. He set out to build a platform where raw passion would never fade."
-    },
-    {
-      role: "The Motorcycle Designer",
-      image: "/team/designer.png",
-      story: "A visionary artist, restless to shatter boundaries and sketch lines that could finally breathe without compromise, turning raw metal into absolute emotion."
-    },
-    {
-      role: "The Dynamics Specialist",
-      image: "/team/engineer.png",
-      story: "Dedicated to elevating handling and behavior, engineering a premium connection to the road. This ensures every ride is profoundly refined and intensely thrilling."
-    },
-    {
-      role: "The Material Scientist",
-      image: "/team/scientist.png",
-      story: "A mind driven to exploit the extreme limits of aerospace-grade metals and racing composites, pushing the boundaries of pure lightness and structural strength."
-    },
-    {
-      role: "The Automotive Photographer",
-      image: "/team/photographer.png",
-      story: "Having spent years immortalizing the world's finest machines through a lens, they are now determined to bring their own vision to life in metal and carbon."
-    }
+  const carouselImages = [
+    "/team/full group pic 2 .jpg",
+    "/team/on track.jpg",
   ];
 
   return (
-    <section className="relative bg-zinc-950 py-24 px-6 md:px-12 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto space-y-24">
+    <section className="relative bg-zinc-950 py-32 border-t border-zinc-900 overflow-hidden">
+      <div className="max-w-[100vw] mx-auto space-y-24">
         <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInVariants}
-            className="text-center"
+            className="text-center max-w-4xl mx-auto px-6"
         >
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white font-brand mb-8">The Team</h2>
+          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white font-brand mb-8">The Founders</h2>
           <div className="w-16 h-1 bg-gray-500 mx-auto"></div>
+          <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed mt-10">
+            We are a unified force. Master designers, ride dynamics specialists, material scientists, and racing enthusiasts bound by blood and passion. Operating as one entity to redefine Indian engineering.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-center">
-          {team.map((member, index) => (
-            <motion.div 
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeInVariants}
-              className="bg-black border border-zinc-900 overflow-hidden hover:border-zinc-700 transition-colors group"
-            >
-              <div className="relative aspect-square w-full overflow-hidden">
-                <Image 
-                  src={member.image} 
-                  alt={member.role} 
-                  fill 
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" 
-                />
-              </div>
-              <div className="p-8 space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold uppercase text-white font-brand">{member.role}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{member.story}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Carousel / Image Showcase */}
+        <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInVariants}
+            className="w-full flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 md:px-12 pb-8 scrollbar-hide"
+        >
+            {carouselImages.map((src, idx) => (
+                <div key={idx} className="relative min-w-[85vw] md:min-w-[60vw] lg:min-w-[45vw] aspect-[16/9] md:aspect-[4/3] rounded-2xl overflow-hidden snap-center shrink-0 border border-white/5">
+                    <Image src={src} alt="Team" fill className="object-cover hover:scale-105 transition-transform duration-1000 ease-out grayscale hover:grayscale-0" />
+                </div>
+            ))}
+        </motion.div>
       </div>
     </section>
   );
@@ -202,20 +174,27 @@ function EngineeringSection() {
 
 function MovementSection() {
   return (
-    <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center bg-zinc-950 px-6 md:px-12 py-24">
+    <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center border-t border-zinc-900 bg-black px-6 md:px-12 py-32 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image src="/team/full group pic.jpg" alt="Team Outro" fill className="object-cover opacity-30 grayscale mix-blend-luminosity hover:opacity-50 hover:grayscale-0 transition-all duration-1000" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black"></div>
+      </div>
+
       <motion.div
          initial="hidden"
          whileInView="visible"
          viewport={{ once: true, margin: "-100px" }}
          variants={fadeInVariants}
-         className="max-w-4xl mx-auto space-y-8"
+         className="relative z-10 max-w-4xl mx-auto space-y-8"
       >
         <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter text-white font-brand leading-none">
           Igniting a <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">Movement</span>
         </h2>
-        <p className="text-lg md:text-2xl text-gray-300 font-light mt-8">
-          Together, we aren&apos;t just building motorcycles. We are united by mastery and an unrelenting passion to create something truly extraordinary. An unparalleled appetite for performance—born in India, destined for the world.
+        <p className="text-xl md:text-3xl text-gray-300 font-light mt-8 px-4 leading-relaxed tracking-wide">
+          Together, we aren&apos;t just building motorcycles. We are united by mastery and an unrelenting passion to create something truly extraordinary. 
+          <br/><br/>
+          An unparalleled appetite for performance—born in India, destined for the world.
         </p>
       </motion.div>
     </section>
