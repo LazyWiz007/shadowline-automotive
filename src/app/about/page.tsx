@@ -19,8 +19,8 @@ function GenesisSection() {
         <Image src="/team/garage pic.jpg" alt="Garage" fill className="object-cover opacity-20 hover:opacity-30 transition-opacity duration-1000" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/90"></div>
       </div>
-      
-      <motion.div 
+
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -58,11 +58,11 @@ function TeamSection() {
     <section className="relative bg-zinc-950 py-32 border-t border-zinc-900 overflow-hidden">
       <div className="max-w-[100vw] mx-auto space-y-24">
         <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInVariants}
-            className="text-center max-w-4xl mx-auto px-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInVariants}
+          className="text-center max-w-4xl mx-auto px-6"
         >
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white font-brand mb-8">The Founders</h2>
           <div className="w-16 h-1 bg-gray-500 mx-auto"></div>
@@ -72,18 +72,18 @@ function TeamSection() {
         </motion.div>
 
         {/* Carousel / Image Showcase */}
-        <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={fadeInVariants}
-            className="w-full flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 md:px-12 pb-8 scrollbar-hide"
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInVariants}
+          className="w-full flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 md:px-12 pb-8 scrollbar-hide"
         >
-            {carouselImages.map((src, idx) => (
-                <div key={idx} className="relative min-w-[85vw] md:min-w-[60vw] lg:min-w-[45vw] aspect-[16/9] md:aspect-[4/3] rounded-2xl overflow-hidden snap-center shrink-0 border border-white/5">
-                    <Image src={src} alt="Team" fill className="object-cover hover:scale-105 transition-transform duration-1000 ease-out grayscale hover:grayscale-0" />
-                </div>
-            ))}
+          {carouselImages.map((src, idx) => (
+            <div key={idx} className="relative min-w-[85vw] md:min-w-[60vw] lg:min-w-[45vw] aspect-[16/9] md:aspect-[4/3] rounded-2xl overflow-hidden snap-center shrink-0 border border-white/5">
+              <Image src={src} alt="Team" fill className="object-cover hover:scale-105 transition-transform duration-1000 ease-out grayscale hover:grayscale-0" />
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
@@ -95,17 +95,17 @@ function CarbonSection() {
     <section className="relative min-h-screen flex items-center bg-zinc-950 py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <motion.div
-           initial="hidden"
-           whileInView="visible"
-           viewport={{ once: true, margin: "-100px" }}
-           variants={fadeInVariants}
-           className="space-y-8 order-2 md:order-1"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInVariants}
+          className="space-y-8 order-2 md:order-1"
         >
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white font-brand">
-            Mastery of <br/><span className="text-gray-500">Structural Carbon</span>
+            Mastery of <br /><span className="text-gray-500">Structural Carbon</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-            Beyond passion lies absolute precision. We don&apos;t just use carbon fiber as a finish; we engineer it as the very skeleton of our machines. 
+            Beyond passion lies absolute precision. We don&apos;t just use carbon fiber as a finish; we engineer it as the very skeleton of our machines.
           </p>
           <p className="text-base md:text-lg text-gray-400 leading-relaxed">
             Mastering structural carbon allows us to strip away the unnecessary, achieving an uncompromising power-to-weight ratio. Every weave is meticulously calculated to deliver extreme torsional rigidity while shedding every possible gram. It isn&apos;t just about saving weight—it&apos;s about re-engineering the very soul of the motorcycle.
@@ -114,16 +114,16 @@ function CarbonSection() {
 
         {/* Abstract Structural Visual Placeholder */}
         <motion.div
-           initial={{ opacity: 0, scale: 0.9 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 1 }}
-           viewport={{ once: true }}
-           className="relative aspect-square w-full order-1 md:order-2 flex items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="relative aspect-square w-full order-1 md:order-2 flex items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900"
         >
-            <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1623912629631-0164c39ce988?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center mix-blend-overlay"></div>
-            <div className="relative text-zinc-700 tracking-widest uppercase text-sm font-bold rotate-90 scale-150">
-              Carbon Fiber / Structural Rigidity
-            </div>
+          <div className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay" style={{ backgroundImage: "url('/Hero/3.png')" }}></div>
+          <div className="relative text-zinc-700 tracking-widest uppercase text-sm font-bold rotate-90 scale-150">
+            Carbon Fiber / Structural Rigidity
+          </div>
         </motion.div>
       </div>
     </section>
@@ -136,13 +136,13 @@ function EngineeringSection() {
     target: ref,
     offset: ["start end", "end start"]
   });
-  
+
   const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-black text-white py-24 px-6 md:px-12">
       {/* Background Graphic */}
-      <motion.div 
+      <motion.div
         style={{ y: yParallax }}
         className="absolute inset-0 opacity-10 flex items-center justify-center font-brand font-bold text-[15rem] leading-none whitespace-nowrap overflow-hidden select-none pointer-events-none"
       >
@@ -151,10 +151,10 @@ function EngineeringSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-12">
         <motion.div
-           initial="hidden"
-           whileInView="visible"
-           viewport={{ once: true, margin: "-100px" }}
-           variants={fadeInVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInVariants}
         >
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white font-brand mb-8">
             Engineering Strength
@@ -181,19 +181,19 @@ function MovementSection() {
       </div>
 
       <motion.div
-         initial="hidden"
-         whileInView="visible"
-         viewport={{ once: true, margin: "-100px" }}
-         variants={fadeInVariants}
-         className="relative z-10 max-w-4xl mx-auto space-y-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInVariants}
+        className="relative z-10 max-w-4xl mx-auto space-y-8"
       >
         <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter text-white font-brand leading-none">
           Igniting a <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">Movement</span>
         </h2>
         <p className="text-xl md:text-3xl text-gray-300 font-light mt-8 px-4 leading-relaxed tracking-wide">
-          Together, we aren&apos;t just building motorcycles. We are united by mastery and an unrelenting passion to create something truly extraordinary. 
-          <br/><br/>
+          Together, we aren&apos;t just building motorcycles. We are united by mastery and an unrelenting passion to create something truly extraordinary.
+          <br /><br />
           An unparalleled appetite for performance—born in India, destined for the world.
         </p>
       </motion.div>
@@ -205,7 +205,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       <Header />
-      
+
       <GenesisSection />
       <TeamSection />
       <CarbonSection />

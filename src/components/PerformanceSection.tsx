@@ -67,7 +67,7 @@ export default function PerformanceSection() {
                             </motion.div>
                         ))}
                     </div>
-                    <button className="group relative inline-block mt-8">
+                    <a href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="group relative inline-block mt-8">
                         {/* Border Layer - White/30 to White on Hover */}
                         <div
                             className="absolute inset-0 bg-white/30 group-hover:bg-white transition-colors duration-300"
@@ -85,7 +85,7 @@ export default function PerformanceSection() {
                                 </svg>
                             </span>
                         </div>
-                    </button>
+                    </a>
                 </div>
 
                 {/* Right Content - Image */}
