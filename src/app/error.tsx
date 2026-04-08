@@ -18,7 +18,7 @@ export default function Error({
     return (
         <div className="flex h-screen w-full flex-col items-center justify-center bg-black text-white p-4">
             <h2 className="mb-4 text-2xl font-bold font-brand tracking-widest text-[#2A909B]">Something went wrong!</h2>
-            <p className="mb-8 text-gray-400 text-center max-w-md">
+            <p className="text-justify mb-8 text-gray-400 max-w-md">
                 An unexpected error occurred. Our team has been notified.
             </p>
             <button

@@ -103,7 +103,7 @@ export default function BookingModal() {
                                             Experience
                                         </span>
                                     </h2>
-                                    <p className="text-gray-400 font-sans text-sm mb-8">
+                                    <p className="text-justify text-gray-400 font-sans text-sm mb-8">
                                         Enter your details below to schedule a private consultation or test ride.
                                     </p>
                                 </div>
@@ -225,7 +225,7 @@ export default function BookingModal() {
                                     <Check size={32} />
                                 </div>
                                 <h3 className="text-2xl font-brand font-bold uppercase text-white mb-4">Request Received</h3>
-                                <p className="text-gray-400 font-sans">
+                                <p className="text-justify text-gray-400 font-sans">
                                     Thank you for your interest. Our team will contact you shortly to schedule your consultation.
                                 </p>
                                 <button

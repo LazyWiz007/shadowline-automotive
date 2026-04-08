@@ -59,7 +59,7 @@ export default function RaceReady() {
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
                             The Idea
                         </h3>
-                        <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
+                        <p className="text-justify text-lg md:text-xl text-gray-300 font-light leading-relaxed">
                             Helium 160,  the art of acceleration, made tangible. It is philosophy in motion. A declaration that speed is not chaos, but clarity. That control is not restraint, but freedom. That every rider deserves the chance to experience the uncompromising truth of performance. It is not simply a motorcycle; it is Grand prix, distilled a deliberate training instrument, engineered with precision and purpose.
                         </p>
                     </motion.div>
@@ -75,7 +75,7 @@ export default function RaceReady() {
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
                             STRUCTURE & EFFICIENCY - DISCIPLINE OF LIGHTNESS
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-lg">
+                        <p className="text-justify text-gray-400 leading-relaxed text-lg">
                             At its core: a lightweight aluminum main frame, designed for strength without compromise. The carbon-fiber monocoque — a load-bearing structure (seat and tank section, top coul) that defines the machine's architecture. The Light weight Billet aluminum triple clamps and swingarm deliver the stiffness and performance required for a track bike . Aerospace-grade aluminum sprockets reduce weight further, ensuring every gram serves a purpose. An 82-kg masterpiece, unleashed for pure performance
                         </p>
                     </motion.div>
@@ -91,7 +91,7 @@ export default function RaceReady() {
                         <h3 className="text-2xl font-brand font-bold uppercase tracking-wide mb-6 text-white">
                             CONTROL & FEEDBACK - HANDLING & DYNAMICS
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-lg">
+                        <p className="text-justify text-gray-400 leading-relaxed text-lg">
                             Having a weight distribution of 51-49, with the most optimal COG for flickability & straight line stability. Fully adjustable front forks and rear suspension work together to preserve stability while amplifying feedback. The result is a machine that responds instantly, predictably, and agile
                         </p>
                     </motion.div>
@@ -109,7 +109,7 @@ export default function RaceReady() {
                                 <p className="text-2xl md:text-3xl font-light italic text-white mb-2">
                                     How close does this feel to racing at the highest level?
                                 </p>
-                                <p className="text-gray-400 mb-8">
+                                <p className="text-justify text-gray-400 mb-8">
                                     Spend time on track. Watch the data. The answer becomes obvious.
                                 </p>
                                 <p className="text-4xl md:text-5xl font-brand font-black uppercase italic tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal text-right">

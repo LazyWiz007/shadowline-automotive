@@ -65,7 +65,7 @@ export default function TechSpecs() {
                             </div>
                             <h3 className="text-3xl font-bold text-white mb-2">{spec.value}</h3>
                             <p className="text-sm font-medium text-brand-teal uppercase tracking-wider mb-1">{spec.label}</p>
-                            <p className="text-xs text-gray-400 font-light">{spec.sub}</p>
+                            <p className="text-justify text-xs text-gray-400 font-light">{spec.sub}</p>
                         </motion.div>
                     ))}
                 </div>

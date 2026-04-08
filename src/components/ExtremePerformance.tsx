@@ -53,7 +53,7 @@ export default function ExtremePerformance() {
                                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                                     className="overflow-hidden"
                                                 >
-                                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-md">
+                                                    <p className="text-justify text-gray-400 text-sm md:text-base leading-relaxed max-w-md">
                                                         {faq.answer}
                                                     </p>
                                                 </motion.div>

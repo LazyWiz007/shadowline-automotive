@@ -114,7 +114,7 @@ export default function VisualSpecs() {
                                 className="group cursor-pointer pointer-events-auto"
                             >
                                 <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,0.3)]">{spec.label}</h4>
-                                <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <p className="text-justify text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -131,7 +131,7 @@ export default function VisualSpecs() {
                                 className="group cursor-pointer pointer-events-auto"
                             >
                                 <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,0.3)]">{spec.label}</h4>
-                                <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <p className="text-justify text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -148,7 +148,7 @@ export default function VisualSpecs() {
                                 className="group cursor-pointer pointer-events-auto"
                             >
                                 <h4 className="text-white font-brand font-bold uppercase tracking-widest text-xl mb-2 transition-all duration-300 group-hover:[text-shadow:0_0_15px_rgba(255,255,255,0.3)]">{spec.label}</h4>
-                                <p className="text-gray-300 font-sans text-xl font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
+                                <p className="text-justify text-gray-300 font-sans text-xl font-medium leading-relaxed tracking-wide opacity-90">{spec.detail}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -167,7 +167,7 @@ export default function VisualSpecs() {
                         className="text-left bg-white/5 p-6 backdrop-blur-sm border-l-2 border-white/20 group cursor-pointer shadow-sm"
                     >
                         <h4 className="text-white font-brand font-bold uppercase tracking-widest text-sm mb-2 group-hover:[text-shadow:0_0_10px_rgba(255,255,255,0.3)]">{spec.label}</h4>
-                        <p className="text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide">{spec.detail}</p>
+                        <p className="text-justify text-gray-300 font-sans text-xs font-medium leading-relaxed tracking-wide">{spec.detail}</p>
                     </motion.div>
                 ))}
             </div>

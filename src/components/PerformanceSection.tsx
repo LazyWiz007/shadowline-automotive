@@ -36,7 +36,7 @@ export default function PerformanceSection() {
                                 Excellence
                             </span>
                         </h2>
-                        <p className="text-gray-300 font-sans text-sm md:text-base max-w-md leading-relaxed mb-8">
+                        <p className="text-justify text-gray-300 font-sans text-sm md:text-base max-w-md leading-relaxed mb-8">
                             Every curve, every component is engineered for pure speed and control. The Helium 160 redefines the power-to-weight ratio.
                         </p>
                     </motion.div>
