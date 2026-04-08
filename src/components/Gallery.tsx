@@ -7,34 +7,34 @@ const images = [
     {
         src: "/Hero/Artboard 1.jpg",
         alt: "Helium 160 Side Profile",
-        className: "col-span-1 md:col-span-2 row-span-2 h-[60vh] md:h-[80vh]",
+        className: "col-span-1 h-[40vh] md:h-[50vh]",
     },
     {
         src: "/Hero/2.png",
         alt: "Helium 160 Cockpit View",
-        className: "col-span-1 h-[30vh] md:h-[40vh]",
+        className: "col-span-1 h-[40vh] md:h-[50vh]",
     },
     {
         src: "/Hero/3.jpg",
         alt: "Helium 160 Rear Angle",
-        className: "col-span-1 h-[30vh] md:h-[40vh]",
+        className: "col-span-1 h-[40vh] md:h-[50vh]",
     },
     {
-        src: "/Hero/4.png",
-        alt: "Helium 160 Rear Angle",
-        className: " h-[50vh] md:h-[30vh]",
+        src: "/Hero/1.png",
+        alt: "Helium 160 Front Angle",
+        className: "col-span-1 h-[40vh] md:h-[50vh]",
     }
 ];
 
 export default function Gallery() {
     return (
-        <section className="bg-white py-24 min-h-screen relative overflow-hidden">
+        <section className="bg-zinc-950 py-24 min-h-screen relative overflow-hidden">
             <div className="max-w-[1920px] mx-auto px-4 md:px-8 mb-16 md:mb-24">
                 <motion.h2
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter text-black"
+                    className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter text-white"
                 >
                     Pure <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal">Aesthetics</span>
                 </motion.h2>

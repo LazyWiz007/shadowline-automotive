@@ -7,7 +7,7 @@ import { performanceStats } from "@/lib/data";
 
 export default function PerformanceSection() {
     return (
-        <section className="relative min-h-screen text-white overflow-hidden py-24">
+        <section id="technology" className="relative min-h-screen text-white overflow-hidden py-24">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image

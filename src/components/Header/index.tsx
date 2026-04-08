@@ -32,19 +32,14 @@ export default function Navbar() {
     });
 
     const mainLinks = [
-        { name: "Helium 160", href: "#" },
-        { name: "Technology", href: "#technology" },
+        { name: "Helium 160", href: "/#" },
+        { name: "Technology", href: "/#technology" },
         { name: "About", href: "/about" },
-        { name: "History", href: "#history" },
     ];
 
     const secondaryLinks = [
-        { name: "Dealer locator", href: "#" },
-        { name: "Shop", href: "#" },
         { name: "Contact", href: "#" },
         { name: "Careers", href: "#" },
-        { name: "Press", href: "#" },
-        { name: "Factory tours", href: "#" },
     ];
 
     const { openModal } = useBooking();
@@ -140,20 +135,22 @@ export default function Navbar() {
                             </div>
 
                             {/* Right: Secondary Links */}
-                            <div className="w-full lg:w-auto mt-12 lg:mt-0 grid grid-cols-2 gap-x-6 md:gap-x-12 text-right">
-                                {/* Left Column: Corporate/Info */}
-                                <div className="flex flex-col space-y-3 md:space-y-4">
-                                    {secondaryLinks.slice(3, 6).map(link => (
-                                        <Link key={link.name} href={link.href} className="block text-sm md:text-lg text-gray-400 hover:text-white transition-colors font-sans">{link.name}</Link>
-                                    ))}
-                                </div>
-
-                                {/* Right Column: Commerce/Contact */}
-                                <div className="flex flex-col space-y-3 md:space-y-4">
-                                    {secondaryLinks.slice(0, 3).map(link => (
-                                        <Link key={link.name} href={link.href} className="block text-sm md:text-lg text-gray-400 hover:text-white transition-colors font-sans">{link.name}</Link>
-                                    ))}
-                                </div>
+                            <div className="w-full lg:w-auto mt-12 lg:mt-0 flex flex-col space-y-3 md:space-y-4 text-right">
+                                {secondaryLinks.map(link => (
+                                    <Link 
+                                        key={link.name} 
+                                        href={link.href} 
+                                        onClick={(e) => {
+                                            if (link.name === "Careers") {
+                                                e.preventDefault();
+                                                alert("No vacancy at the moment, but you can mail sales@shadowlineautomotive.com");
+                                            }
+                                        }}
+                                        className="block text-sm md:text-lg text-gray-400 hover:text-white transition-colors font-sans"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ))}
                             </div>
                         </div>
                     </motion.div>

@@ -25,24 +25,26 @@ function GenesisSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInVariants}
-        className="relative z-10 max-w-4xl mx-auto text-center space-y-8"
+        className="relative z-10 max-w-4xl mx-auto space-y-8"
       >
-        <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white font-brand">
+        <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white font-brand text-center">
           The Genesis
         </h1>
         <div className="w-24 h-1 bg-white mx-auto"></div>
-        <p className="text-lg md:text-2xl text-gray-300 leading-relaxed font-light">
-          Our journey began when five distinct passions converged into a singular, uncompromising vision: to build India’s future in performance.
-        </p>
-        <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-          Our story isn&apos;t about a single founder—it&apos;s about a collective uprising. Five co-founders, each masters of their own craft, united by the realization that the ultimate stage for true Indian performance machines simply didn&apos;t exist. Together, they set out to build a platform where raw passion would never be forced to fade.
-        </p>
-        <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-          The team brought together a father whose fire for racing matched his children&apos;s, and a visionary motorcycle designer restless to shatter boundaries and sketch lines that could finally breathe without compromise. They were joined by a ride dynamics specialist dedicated to elevating handling—engineering a premium connection to the road.
-        </p>
-        <p className="text-base md:text-xl text-gray-400 leading-relaxed">
-          Rounding out the founding team was a mastermind in material science, driven to exploit the extreme limits of aerospace-grade metals and racing composites, alongside an automotive photographer who had spent years immortalizing the world’s finest machines—now determined to bring their collective vision to life in metal and carbon.
-        </p>
+        <div className="space-y-8 text-justify">
+          <p className="text-lg md:text-2xl text-gray-300 leading-relaxed font-light">
+            Our journey began when five distinct passions converged into a singular, uncompromising vision: to build India’s future in performance.
+          </p>
+          <p className="text-base md:text-xl text-gray-400 leading-relaxed">
+            Our story isn&apos;t about a single founder—it&apos;s about a collective uprising. Five co-founders, each masters of their own craft, united by the realization that the ultimate stage for true Indian performance machines simply didn&apos;t exist. Together, they set out to build a platform where raw passion would never be forced to fade.
+          </p>
+          <p className="text-base md:text-xl text-gray-400 leading-relaxed">
+            The team brought together a father whose fire for racing matched his children&apos;s, and a visionary motorcycle designer restless to shatter boundaries and sketch lines that could finally breathe without compromise. They were joined by a ride dynamics specialist dedicated to elevating handling—engineering a premium connection to the road.
+          </p>
+          <p className="text-base md:text-xl text-gray-400 leading-relaxed">
+            Rounding out the founding team was a mastermind in material science, driven to exploit the extreme limits of aerospace-grade metals and racing composites, alongside an automotive photographer who had spent years immortalizing the world’s finest machines—now determined to bring their collective vision to life in metal and carbon.
+          </p>
+        </div>
       </motion.div>
     </section>
   );
