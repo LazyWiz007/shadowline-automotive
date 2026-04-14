@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useBooking } from "@/context/BookingContext";
 
 export default function Hero() {
+    const { openModal } = useBooking();
+
     return (
         <section id="helium" className="relative h-screen w-full overflow-hidden bg-white">
             {/* Background Image */}
@@ -29,16 +32,69 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.3)_40%,transparent_100%)] z-10" />
             </div>
 
-            {/* Content Content - Aligned with Navbar */}
-            <div className="absolute top-[25%] md:top-[40%] left-6 md:left-24 z-20">
-                <motion.h1
+            {/* Desktop Content - Title & Buttons below it */}
+            <div className="absolute top-[40%] left-24 z-20 hidden md:block">
+                <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="text-2xl sm:text-7xl md:text-8xl lg:text-3xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none"
                 >
-                    Helium 160
-                </motion.h1>
+                    <h1 className="text-8xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none">
+                        Helium 160
+                    </h1>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                        className="mt-12 flex gap-4"
+                    >
+                        <button 
+                            onClick={openModal}
+                            className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-black hover:text-white border border-white transition-all duration-300"
+                        >
+                            Book Now
+                        </button>
+                        <button 
+                            className="px-8 py-3 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                            Tech Specs
+                        </button>
+                    </motion.div>
+                </motion.div>
+            </div>
+
+            {/* Mobile Content - Title at top, Buttons at bottom */}
+            <div className="md:hidden absolute inset-0 z-20 flex flex-col justify-between p-6 py-20 pointer-events-none">
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="pointer-events-auto"
+                >
+                    <h1 className="text-5xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none">
+                        Helium 160
+                    </h1>
+                </motion.div>
+
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                    className="flex flex-col gap-4 w-full pointer-events-auto pb-8"
+                >
+                    <button 
+                        onClick={openModal}
+                        className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white border border-white transition-all duration-300"
+                    >
+                        Book Now
+                    </button>
+                    <button 
+                        className="w-full py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all duration-300"
+                    >
+                        Tech Specs
+                    </button>
+                </motion.div>
             </div>
         </section>
     );
