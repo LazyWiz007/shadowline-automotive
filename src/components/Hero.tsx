@@ -33,13 +33,13 @@ export default function Hero() {
             </div>
 
             {/* Desktop Content - Title & Buttons below it */}
-            <div className="absolute top-[40%] left-24 z-20 hidden md:block">
+            <div className="absolute bottom-12 md:bottom-24 left-8 md:left-24 z-20 hidden md:block">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <h1 className="text-8xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none">
+                    <h1 className="text-6xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none">
                         Helium 160
                     </h1>
                     
@@ -64,15 +64,15 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            {/* Mobile Content - Title at top, Buttons at bottom */}
-            <div className="md:hidden absolute inset-0 z-20 flex flex-col justify-between p-6 py-20 pointer-events-none">
+            {/* Mobile Content - Cluster at bottom */}
+            <div className="md:hidden absolute inset-0 z-20 flex flex-col justify-end p-8 pb-16 pointer-events-none">
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="pointer-events-auto"
+                    className="pointer-events-auto mb-8"
                 >
-                    <h1 className="text-5xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none">
+                    <h1 className="text-4xl font-extrabold tracking-wide uppercase italic text-white drop-shadow-sm font-brand leading-none">
                         Helium 160
                     </h1>
                 </motion.div>
@@ -80,8 +80,8 @@ export default function Hero() {
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                    className="flex flex-col gap-4 w-full pointer-events-auto pb-8"
+                    transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                    className="flex flex-col gap-3 w-full pointer-events-auto"
                 >
                     <button 
                         onClick={openModal}

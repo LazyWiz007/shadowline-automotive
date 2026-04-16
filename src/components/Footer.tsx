@@ -11,24 +11,17 @@ const links = {
 
 // New data structures for the updated footer links
 const product = [
-    { name: "Helium 160", href: "/products/helium-160" },
-    { name: "Accessories", href: "/products/accessories" },
-    { name: "Apparel", href: "/products/apparel" },
-    { name: "Configurator", href: "/configurator" },
+    { name: "Helium 160", href: "/#" },
+    { name: "Technology", href: "/#technology" },
 ];
 
 const company = [
-    { name: "About Shadowline", href: "/company/about" },
-    { name: "Engineering", href: "/company/engineering" },
-    { name: "Careers", href: "/company/careers" },
-    { name: "Press", href: "/company/press" },
+    { name: "About", href: "/about" },
+    { name: "Careers", href: "#" },
 ];
 
-const models = [ // Renamed from 'support' to 'models' based on usage in diff
-    { name: "Contact Us", href: "/support/contact" },
-    { name: "Warranty", href: "/support/warranty" },
-    { name: "Find a Dealer", href: "/support/dealers" },
-    { name: "Owner's Manual", href: "/support/manual" },
+const supportLinks = [
+    { name: "Contact", href: "#" },
 ];
 
 
@@ -75,6 +68,12 @@ export default function Footer() {
                             <Link
                                 key={link.name}
                                 href={link.href}
+                                onClick={(e) => {
+                                    if (link.name === "Careers") {
+                                        e.preventDefault();
+                                        alert("No vacancy at the moment, but you can mail sales@shadowlineautomotive.com");
+                                    }
+                                }}
                                 className="text-sm font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-300 w-fit"
                             >
                                 {link.name}
@@ -87,7 +86,7 @@ export default function Footer() {
                 <div>
                     <h4 className="font-sans text-sm font-bold uppercase tracking-widest text-gray-500 mb-6">Support</h4>
                     <div className="flex flex-col gap-4">
-                        {models.map((link) => (
+                        {supportLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
