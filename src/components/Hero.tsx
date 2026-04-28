@@ -55,11 +55,14 @@ export default function Hero() {
                         >
                             Book Now
                         </button>
-                        <button 
+                        <a 
+                            href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="px-8 py-3 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all duration-300"
                         >
                             Tech Specs
-                        </button>
+                        </a>
                     </motion.div>
                 </motion.div>
             </div>
@@ -89,11 +92,14 @@ export default function Hero() {
                     >
                         Book Now
                     </button>
-                    <button 
-                        className="w-full py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all duration-300"
+                    <a 
+                        href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all duration-300 text-center"
                     >
                         Tech Specs
-                    </button>
+                    </a>
                 </motion.div>
             </div>
         </section>

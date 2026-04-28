@@ -20,10 +20,9 @@ export default function PerformanceSection() {
                 <div className="absolute inset-0 bg-black/60" />
             </div>
 
-            <div className="max-w-[1600px] mx-auto px-6 h-full flex flex-col lg:flex-row items-center relative z-10">
-
-                {/* Left Content - Specs */}
-                <div className="w-full lg:w-[60%] flex flex-col justify-center gap-16 order-2 lg:order-1 mt-12 lg:mt-0 pr-0 lg:pr-12">
+            <div className="max-w-[1600px] mx-auto px-6 h-full flex items-center relative z-10">
+                {/* Content - Specs */}
+                <div className="w-full flex flex-col justify-center gap-16 mt-12 lg:mt-0">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +66,7 @@ export default function PerformanceSection() {
                             </motion.div>
                         ))}
                     </div>
-                    <a href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="group relative inline-block mt-8">
+                    <a href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="group relative inline-block mt-8 w-fit">
                         {/* Border Layer - White/30 to White on Hover */}
                         <div
                             className="absolute inset-0 bg-white/30 group-hover:bg-white transition-colors duration-300"
@@ -86,26 +85,6 @@ export default function PerformanceSection() {
                             </span>
                         </div>
                     </a>
-                </div>
-
-                {/* Right Content - Image */}
-                <div className="w-full lg:w-[40%] h-[50vh] lg:h-[80vh] relative order-1 lg:order-2">
-                    <div className="relative w-full h-full">
-                        {/* Mobile Image */}
-                        <div className="block lg:hidden w-full h-full relative">
-                            <Image
-                                src="/Hero/mobile3.jpg"
-                                alt="Helium 160 Performance Engineering - Mobile"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-
-                        {/* Desktop Image */}
-
-                        {/* Gradient Overlay for blending */}
-                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black via-transparent to-transparent" />
-                    </div>
                 </div>
             </div>
         </section>

@@ -38,7 +38,7 @@ export default function Navbar() {
     ];
 
     const secondaryLinks = [
-        { name: "Contact", href: "#" },
+        { name: "Contact", href: "/contact" },
         { name: "Careers", href: "#" },
     ];
 

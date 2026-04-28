@@ -39,13 +39,31 @@ export default function BookingModal() {
 
         setIsSubmitting(true);
 
-        // Simulate server submission
-        // In a real app, you'd send this data to your API route
-        setTimeout(() => {
-            console.log("Form Submitted:", { ...formData, turnstileToken });
+        try {
+            const response = await fetch("/api/book", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    turnstileToken,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setStep("success");
+            } else {
+                alert(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Connection error. Please check your internet and try again.");
+        } finally {
             setIsSubmitting(false);
-            setStep("success");
-        }, 1500);
+        }
     };
 
     const handleClose = () => {
@@ -193,7 +211,7 @@ export default function BookingModal() {
                                     {/* Turnstile */}
                                     <div className="pt-2 flex justify-center">
                                         <Turnstile
-                                            sitekey="0x4AAAAAAA9_E1r8v7f_K8lP" // Replace with your actual site key
+                                            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
                                             onVerify={(token) => setTurnstileToken(token)}
                                             theme="dark" // Changed to dark theme for dark background
                                         />
