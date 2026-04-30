@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
-import Turnstile from "react-turnstile";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useBooking } from "@/context/BookingContext";
 
 export default function BookingModal() {
@@ -211,9 +211,9 @@ export default function BookingModal() {
                                     {/* Turnstile */}
                                     <div className="pt-2 flex justify-center">
                                         <Turnstile
-                                            sitekey="0x4AAAAAAADE2i9qsyxozefqf"
-                                            onVerify={(token) => setTurnstileToken(token)}
-                                            theme="dark" // Changed to dark theme for dark background
+                                            siteKey="0x4AAAAAAADE2i9qsyxozefqf"
+                                            onSuccess={(token) => setTurnstileToken(token)}
+                                            options={{ theme: "dark" }}
                                         />
                                     </div>
 
