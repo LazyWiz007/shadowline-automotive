@@ -211,7 +211,7 @@ export default function BookingModal() {
                                     {/* Turnstile */}
                                     <div className="pt-2 flex justify-center">
                                         <Turnstile
-                                            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+                                            sitekey="0x4AAAAAAADE2i9qsyxozefqf"
                                             onVerify={(token) => setTurnstileToken(token)}
                                             theme="dark" // Changed to dark theme for dark background
                                         />
