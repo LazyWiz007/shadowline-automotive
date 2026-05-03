@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
-import { Turnstile } from "@marsidev/react-turnstile";
 import { useBooking } from "@/context/BookingContext";
 
 export default function BookingModal() {
@@ -16,7 +15,6 @@ export default function BookingModal() {
         countryCode: "+91",
         teamName: "",
     });
-    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const countryCodes = [
@@ -32,10 +30,6 @@ export default function BookingModal() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!turnstileToken) {
-            alert("Please complete the security check.");
-            return;
-        }
 
         setIsSubmitting(true);
 
@@ -47,7 +41,6 @@ export default function BookingModal() {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    turnstileToken,
                 }),
             });
 
@@ -72,7 +65,6 @@ export default function BookingModal() {
         setTimeout(() => {
             setStep("form");
             setFormData({ name: "", email: "", phone: "", countryCode: "+91", teamName: "" });
-            setTurnstileToken(null);
         }, 300);
     };
 
@@ -208,18 +200,9 @@ export default function BookingModal() {
                                         </div>
                                     </div>
 
-                                    {/* Turnstile */}
-                                    <div className="pt-2 flex justify-center">
-                                        <Turnstile
-                                            siteKey="0x4AAAAAAADE2i9qsyxozefqf"
-                                            onSuccess={(token) => setTurnstileToken(token)}
-                                            options={{ theme: "dark" }}
-                                        />
-                                    </div>
-
                                     <button
                                         type="submit"
-                                        disabled={isSubmitting || !turnstileToken}
+                                        disabled={isSubmitting}
                                         className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                     >
                                         {isSubmitting ? (

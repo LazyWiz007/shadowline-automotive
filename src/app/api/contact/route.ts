@@ -19,7 +19,7 @@ export async function POST(request: Request) {
         // Send Email via Resend
         if (process.env.RESEND_API_KEY) {
             try {
-                await resend.emails.send({
+                const { error: resendError } = await resend.emails.send({
                     from: "Shadowline Contact <noreply@zealics.com>", // Using verified domain
                     to: "sales@zealics.com",
                     subject: `Contact Form: ${subject || "General Inquiry"}`,
@@ -38,8 +38,20 @@ export async function POST(request: Request) {
                         </div>
                     `,
                 });
-            } catch (emailError) {
-                console.error("Contact Email failed:", emailError);
+
+                if (resendError) {
+                    console.error("Resend API returned an error:", resendError);
+                    return NextResponse.json(
+                        { error: `Email delivery failed: ${resendError.message}` },
+                        { status: 500 }
+                    );
+                }
+            } catch (emailError: any) {
+                console.error("Contact Email exception:", emailError);
+                return NextResponse.json(
+                    { error: `Email service error: ${emailError.message}` },
+                    { status: 500 }
+                );
             }
         }
 
