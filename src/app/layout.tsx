@@ -23,6 +23,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Shadowline Automotive | Helium 160",
   description: "The future of high-performance cycling. Discover the Helium 160.",
+  icons: {
+    icon: "/team/faviconsa.png",
+    apple: "/team/faviconsa.png",
+  },
 };
 
 export default function RootLayout({
