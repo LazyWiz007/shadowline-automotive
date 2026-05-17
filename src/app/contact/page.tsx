@@ -84,7 +84,7 @@ export default function ContactPage() {
             >
               <div className="space-y-8">
                 <h2 className="text-3xl font-brand font-bold uppercase tracking-tighter text-white">Contact Information</h2>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start gap-6 group">
                     <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-cyan transition-colors">
@@ -104,8 +104,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Call Us</p>
-                      <a href="tel:+919876543210" className="text-lg md:text-xl text-white hover:text-brand-cyan transition-colors">
-                        +91 98765 43210
+                      <a href="tel:+919845720623" className="text-lg md:text-xl text-white hover:text-brand-cyan transition-colors">
+                        +91 98457 20623
                       </a>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                       <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Visit Us</p>
                       <p className="text-lg md:text-xl text-white">
                         Shadowline Automotive HQ<br />
-                        Pune, Maharashtra, India
+                        Bangalore, Karnataka, India
                       </p>
                     </div>
                   </div>
@@ -143,14 +143,14 @@ export default function ContactPage() {
               className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl pointer-events-none"></div>
-              
+
               <h2 className="text-3xl font-brand font-bold uppercase tracking-tighter text-white mb-8 flex items-center gap-4">
                 <MessageSquare className="w-6 h-6 text-brand-cyan" />
                 Quick Message
               </h2>
 
               {isSubmitted ? (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center py-12 text-center space-y-4"
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   <CheckCircle2 className="w-16 h-16 text-brand-teal" />
                   <h3 className="text-2xl font-brand font-bold uppercase">Message Sent</h3>
                   <p className="text-gray-400">Thank you for reaching out. Our team will get back to you shortly.</p>
-                  <button 
+                  <button
                     onClick={() => setIsSubmitted(false)}
                     className="mt-4 text-brand-cyan hover:underline uppercase text-sm tracking-widest font-bold"
                   >
@@ -170,8 +170,8 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
@@ -182,8 +182,8 @@ export default function ContactPage() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
@@ -195,8 +195,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Subject</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
@@ -206,7 +206,7 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Message</label>
-                    <textarea 
+                    <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
@@ -216,7 +216,7 @@ export default function ContactPage() {
                       placeholder="Tell us about your requirements..."
                     />
                   </div>
-                  <button 
+                  <button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-brand-cyan hover:text-white transition-all duration-300 disabled:opacity-50"
