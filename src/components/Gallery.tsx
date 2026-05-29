@@ -7,29 +7,29 @@ const images = [
     {
         src: "/Hero/Artboard 1.jpg",
         alt: "Helium 160 Side Profile",
-        className: "col-span-1 h-[40vh] md:h-[50vh]",
+        className: "col-span-1 h-[25vh] md:h-[50vh]",
     },
     {
         src: "/Hero/2.png",
         alt: "Helium 160 Cockpit View",
-        className: "col-span-1 h-[40vh] md:h-[50vh]",
+        className: "col-span-1 h-[25vh] md:h-[50vh]",
     },
     {
         src: "/Hero/3.jpg",
         alt: "Helium 160 Rear Angle",
-        className: "col-span-1 h-[40vh] md:h-[50vh]",
+        className: "col-span-1 h-[25vh] md:h-[50vh]",
     },
     {
         src: "/Hero/1.png",
         alt: "Helium 160 Front Angle",
-        className: "col-span-1 h-[40vh] md:h-[50vh]",
+        className: "col-span-1 h-[25vh] md:h-[50vh]",
     }
 ];
 
 export default function Gallery() {
     return (
-        <section className="bg-zinc-950 py-24 min-h-screen relative overflow-hidden">
-            <div className="max-w-[1920px] mx-auto px-4 md:px-8 mb-16 md:mb-24">
+        <section className="bg-zinc-950 py-12 md:py-24 min-h-screen relative overflow-hidden">
+            <div className="max-w-[1920px] mx-auto px-4 md:px-8 mb-8 md:mb-24">
                 <motion.h2
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}

@@ -1,37 +1,59 @@
 "use client";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
+import PhoneInput from "./PhoneInput";
+
+const bookingSchema = z.object({
+    name: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.string().email("Invalid email address"),
+    teamName: z.string().optional(),
+    phone: z.string()
+        .min(1, "Phone number is required")
+        .refine((val) => {
+            const phoneNumber = parsePhoneNumberFromString(val);
+            return phoneNumber ? phoneNumber.isValid() : false;
+        }, {
+            message: "Please enter a valid phone number for the selected country",
+        }),
+});
+
+type BookingFormData = z.infer<typeof bookingSchema>;
 
 export default function BookingModal() {
     const { isModalOpen, closeModal } = useBooking();
     const [step, setStep] = useState<"form" | "success">("form");
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        countryCode: "+91",
-        teamName: "",
-    });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const countryCodes = [
-        { code: "+1", country: "USA/Canada" },
-        { code: "+44", country: "UK" },
-        { code: "+91", country: "India" },
-        { code: "+61", country: "Australia" },
-        { code: "+81", country: "Japan" },
-        { code: "+49", country: "Germany" },
-        { code: "+33", country: "France" },
-        { code: "+86", country: "China" },
-    ];
+    const {
+        register,
+        handleSubmit,
+        control,
+        reset,
+        formState: { errors },
+    } = useForm<BookingFormData>({
+        resolver: zodResolver(bookingSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            phone: "",
+            teamName: "",
+        },
+    });
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
+    const onSubmit = async (data: BookingFormData) => {
         setIsSubmitting(true);
+
+        // Parse the E.164 phone string into backward-compatible parts for the backend API
+        const parsedPhone = parsePhoneNumberFromString(data.phone);
+        const countryCode = parsedPhone ? `+${parsedPhone.countryCallingCode}` : "+91";
+        const nationalNumber = parsedPhone ? parsedPhone.nationalNumber as string : data.phone;
 
         try {
             const response = await fetch("/api/book", {
@@ -40,16 +62,20 @@ export default function BookingModal() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    ...formData,
+                    name: data.name,
+                    email: data.email,
+                    teamName: data.teamName,
+                    phone: nationalNumber,
+                    countryCode: countryCode,
                 }),
             });
 
-            const data = await response.json();
+            const responseData = await response.json();
 
             if (response.ok) {
                 setStep("success");
             } else {
-                alert(data.error || "Something went wrong. Please try again.");
+                alert(responseData.error || "Something went wrong. Please try again.");
             }
         } catch (error) {
             console.error("Submission error:", error);
@@ -61,19 +87,10 @@ export default function BookingModal() {
 
     const handleClose = () => {
         closeModal();
-        // Reset state after close animation finishes (approx)
         setTimeout(() => {
             setStep("form");
-            setFormData({ name: "", email: "", phone: "", countryCode: "+91", teamName: "" });
+            reset();
         }, 300);
-    };
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
     };
 
     return (
@@ -94,11 +111,11 @@ export default function BookingModal() {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed inset-0 m-auto z-[101] w-full max-w-lg h-fit max-h-[90vh] overflow-y-auto bg-[#0A0A0A] border border-white/10 p-8 md:p-12 rounded-2xl shadow-2xl"
+                        className="fixed inset-0 m-auto z-[101] w-[92%] sm:w-full max-w-lg h-fit max-h-[95vh] md:overflow-visible overflow-y-auto bg-[#0A0A0A] border border-white/10 p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl"
                     >
                         <button
-                            onClick={closeModal}
-                            className="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors"
+                            onClick={handleClose}
+                            className="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors cursor-pointer"
                             aria-label="Close modal"
                         >
                             <X size={24} />
@@ -118,7 +135,7 @@ export default function BookingModal() {
                                     </p>
                                 </div>
 
-                                <form onSubmit={handleSubmit} className="space-y-4">
+                                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                                     {/* Name */}
                                     <div className="space-y-1">
                                         <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
@@ -127,13 +144,15 @@ export default function BookingModal() {
                                         <input
                                             type="text"
                                             id="name"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
+                                            {...register("name")}
+                                            className={`w-full bg-white/5 border text-white px-4 py-3 rounded-lg focus:outline-none transition-colors placeholder:text-gray-500 ${
+                                                errors.name ? "border-red-500 focus:border-red-500" : "border-white/10 focus:border-brand-cyan"
+                                            }`}
                                             placeholder="John Doe"
                                         />
+                                        {errors.name && (
+                                            <span role="alert" className="block text-xs text-red-500 mt-1">{errors.name.message}</span>
+                                        )}
                                     </div>
 
                                     {/* Team Name */}
@@ -144,10 +163,8 @@ export default function BookingModal() {
                                         <input
                                             type="text"
                                             id="teamName"
-                                            name="teamName"
-                                            value={formData.teamName}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
+                                            {...register("teamName")}
+                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
                                             placeholder="Shadowline Racing"
                                         />
                                     </div>
@@ -160,50 +177,28 @@ export default function BookingModal() {
                                         <input
                                             type="email"
                                             id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-gray-500"
+                                            {...register("email")}
+                                            className={`w-full bg-white/5 border text-white px-4 py-3 rounded-lg focus:outline-none transition-colors placeholder:text-gray-500 ${
+                                                errors.email ? "border-red-500 focus:border-red-500" : "border-white/10 focus:border-brand-cyan"
+                                            }`}
                                             placeholder="john@example.com"
                                         />
+                                        {errors.email && (
+                                            <span role="alert" className="block text-xs text-red-500 mt-1">{errors.email.message}</span>
+                                        )}
                                     </div>
 
-                                    {/* Phone */}
-                                    <div className="space-y-1">
-                                        <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
-                                            Phone Number
-                                        </label>
-                                        <div className="flex">
-                                            <select
-                                                name="countryCode"
-                                                value={formData.countryCode}
-                                                onChange={handleInputChange}
-                                                className="bg-white/5 border border-white/10 text-white px-3 py-3 w-24 focus:outline-none focus:border-brand-cyan transition-colors border-r-0"
-                                            >
-                                                {countryCodes.map((c) => (
-                                                    <option key={c.code} value={c.code} className="bg-black text-white">
-                                                        {c.code}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                            <input
-                                                type="tel"
-                                                id="phone"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleInputChange}
-                                                required
-                                                className="flex-1 bg-white/5 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-brand-cyan transition-colors"
-                                                placeholder="123 456 7890"
-                                            />
-                                        </div>
-                                    </div>
+                                    {/* Phone Component */}
+                                    <PhoneInput
+                                        name="phone"
+                                        control={control}
+                                        label="Phone Number"
+                                    />
 
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                        className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer mt-2"
                                     >
                                         {isSubmitting ? (
                                             <>
@@ -231,7 +226,7 @@ export default function BookingModal() {
                                 </p>
                                 <button
                                     onClick={handleClose}
-                                    className="mt-8 bg-white/10 text-white px-8 py-3 rounded-lg hover:bg-white/20 transition-colors uppercase tracking-widest text-sm font-medium"
+                                    className="mt-8 bg-white/10 text-white px-8 py-3 rounded-lg hover:bg-white/20 transition-colors uppercase tracking-widest text-sm font-medium cursor-pointer"
                                 >
                                     Close
                                 </button>

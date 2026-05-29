@@ -37,7 +37,7 @@ export default function RaceReady() {
                 </div>
 
                 {/* Mobile Title (Non-sticky) */}
-                <div className="lg:hidden pt-24">
+                <div className="lg:hidden pt-12 md:pt-24">
                     <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight">
                         Become <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
@@ -45,9 +45,9 @@ export default function RaceReady() {
                         </span>
                     </h2>
                 </div>
-
+ 
                 {/* Right Column: Scrolling Content */}
-                <div className="flex flex-col space-y-[40vh] py-24 lg:py-[30vh]">
+                <div className="flex flex-col space-y-12 md:space-y-[40vh] py-12 md:py-24 lg:py-[30vh]">
                     {/* Section 1: The Idea */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -63,7 +63,7 @@ export default function RaceReady() {
                             Helium 160,  the art of acceleration, made tangible. It is philosophy in motion. A declaration that speed is not chaos, but clarity. That control is not restraint, but freedom. That every rider deserves the chance to experience the uncompromising truth of performance. It is not simply a motorcycle; it is Grand prix, distilled a deliberate training instrument, engineered with precision and purpose.
                         </p>
                     </motion.div>
-
+ 
                     {/* Section 2: Structure & Efficiency */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -79,7 +79,7 @@ export default function RaceReady() {
                             At its core: a lightweight aluminum main frame, designed for strength without compromise. The carbon-fiber monocoque — a load-bearing structure (seat and tank section, top coul) that defines the machine's architecture. The Light weight Billet aluminum triple clamps and swingarm deliver the stiffness and performance required for a track bike . Aerospace-grade aluminum sprockets reduce weight further, ensuring every gram serves a purpose. An 82-kg masterpiece, unleashed for pure performance
                         </p>
                     </motion.div>
-
+ 
                     {/* Section 3: Control & Feedback */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -95,14 +95,14 @@ export default function RaceReady() {
                             Having a weight distribution of 51-49, with the most optimal COG for flickability & straight line stability. Fully adjustable front forks and rear suspension work together to preserve stability while amplifying feedback. The result is a machine that responds instantly, predictably, and agile
                         </p>
                     </motion.div>
-
+ 
                     {/* Conclusion */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="pt-24 border-t border-white/10"
+                        className="pt-12 md:pt-24 border-t border-white/10"
                     >
                         <div className="grid grid-cols-1 gap-8">
                             <div>

@@ -7,7 +7,7 @@ import { performanceStats } from "@/lib/data";
 
 export default function PerformanceSection() {
     return (
-        <section id="technology" className="relative min-h-screen text-white overflow-hidden py-24">
+        <section id="technology" className="relative min-h-screen text-white overflow-hidden py-12 md:py-24">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -22,12 +22,12 @@ export default function PerformanceSection() {
 
             <div className="max-w-[1600px] mx-auto px-6 h-full flex items-center relative z-10">
                 {/* Content - Specs */}
-                <div className="w-full flex flex-col justify-center gap-16 mt-12 lg:mt-0">
+                <div className="w-full flex flex-col justify-center gap-8 md:gap-16 mt-6 md:mt-12 lg:mt-0">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="mb-8"
+                        className="mb-4 md:mb-8"
                     >
                         <h2 className="text-4xl md:text-6xl font-brand font-bold uppercase italic tracking-tighter leading-tight mb-4">
                             Engineering <br />
@@ -35,11 +35,11 @@ export default function PerformanceSection() {
                                 Excellence
                             </span>
                         </h2>
-                        <p className="text-justify text-gray-300 font-sans text-sm md:text-base max-w-md leading-relaxed mb-8">
+                        <p className="text-justify text-gray-300 font-sans text-sm md:text-base max-w-md leading-relaxed mb-4 md:mb-8">
                             Every curve, every component is engineered for pure speed and control. The Helium 160 redefines the power-to-weight ratio.
                         </p>
                     </motion.div>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 lg:gap-x-12 xl:gap-x-24 gap-y-20 lg:gap-y-32">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 lg:gap-x-12 xl:gap-x-24 gap-y-10 md:gap-y-20 lg:gap-y-32">
                         {performanceStats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -66,7 +66,7 @@ export default function PerformanceSection() {
                             </motion.div>
                         ))}
                     </div>
-                    <a href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="group relative inline-block mt-8 w-fit">
+                    <a href="https://drive.google.com/file/d/1LYfClwz34_gyu8YowOCr68jf0gBNOWXt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="group relative inline-block mt-4 md:mt-8 w-fit">
                         {/* Border Layer - White/30 to White on Hover */}
                         <div
                             className="absolute inset-0 bg-white/30 group-hover:bg-white transition-colors duration-300"
