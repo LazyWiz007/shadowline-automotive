@@ -8,7 +8,7 @@ export default function RaceReady() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section ref={containerRef} className="bg-zinc-950 text-white relative">
+        <section id="helium-details" ref={containerRef} className="bg-zinc-950 text-white relative">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
                 {/* Left Column: Sticky Title */}
                 <div className="hidden lg:flex h-screen sticky top-0 flex-col justify-center">
