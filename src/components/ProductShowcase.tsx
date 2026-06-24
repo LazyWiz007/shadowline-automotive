@@ -16,8 +16,8 @@ const products = [
         exploreId: "helium-details",
     },
     {
-        id: "xpan",
-        name: "Xpan",
+        id: "xpin",
+        name: "Xpin",
         subName: "Electric",
         badge: "comming soon",
         description: "Precise electric racing prototype: aerodynamic carbon monocoque.",
