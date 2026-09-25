@@ -27,7 +27,7 @@ const bookingSchema = z.object({
 type BookingFormData = z.infer<typeof bookingSchema>;
 
 export default function BookingModal() {
-    const { isModalOpen, closeModal } = useBooking();
+    const { isModalOpen, closeModal, selectedVariant } = useBooking();
     const [step, setStep] = useState<"form" | "success">("form");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -67,6 +67,12 @@ export default function BookingModal() {
                     teamName: data.teamName,
                     phone: nationalNumber,
                     countryCode: countryCode,
+                    variant: selectedVariant ? {
+                        id: selectedVariant.id,
+                        label: selectedVariant.label,
+                        price: selectedVariant.price,
+                        subtext: selectedVariant.subtext,
+                    } : null,
                 }),
             });
 
@@ -130,6 +136,13 @@ export default function BookingModal() {
                                             Experience
                                         </span>
                                     </h2>
+                                    {selectedVariant && (
+                                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mx-auto">
+                                            <span className="text-[10px] font-mono tracking-widest text-brand-cyan uppercase">{selectedVariant.label}</span>
+                                            <span className="text-[10px] text-gray-400">·</span>
+                                            <span className="text-[10px] font-mono text-white">{selectedVariant.price}</span>
+                                        </div>
+                                    )}
                                     <p className="text-justify text-gray-400 font-sans text-sm mb-8">
                                         Enter your details below to schedule a private consultation or test ride.
                                     </p>
@@ -220,9 +233,16 @@ export default function BookingModal() {
                                 <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
                                     <Check size={32} />
                                 </div>
-                                <h3 className="text-2xl font-brand font-bold uppercase text-white mb-4">Request Received</h3>
-                                <p className="text-justify text-gray-400 font-sans">
-                                    Thank you for your interest. Our team will contact you shortly to schedule your consultation.
+                                <h3 className="text-2xl font-brand font-bold uppercase text-white mb-2">Request Received</h3>
+                                {selectedVariant && (
+                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-brand-cyan/40 rounded-full mb-4">
+                                        <span className="text-xs font-mono tracking-widest text-brand-cyan uppercase font-bold">{selectedVariant.label}</span>
+                                        <span className="text-xs text-gray-400">·</span>
+                                        <span className="text-xs font-mono text-white">{selectedVariant.price}</span>
+                                    </div>
+                                )}
+                                <p className="text-center text-gray-400 font-sans text-sm max-w-sm mx-auto leading-relaxed">
+                                    Thank you for your interest{selectedVariant ? ` in the ${selectedVariant.label}` : ""}. Our team will contact you shortly to confirm your booking and schedule your consultation.
                                 </p>
                                 <button
                                     onClick={handleClose}
