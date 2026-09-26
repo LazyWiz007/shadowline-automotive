@@ -137,7 +137,7 @@ export default function BookingModal() {
                                         </span>
                                     </h2>
                                     {selectedVariant && (
-                                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mx-auto">
+                                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-white/20 mx-auto">
                                             <span className="text-[10px] font-mono tracking-widest text-brand-cyan uppercase">{selectedVariant.label}</span>
                                             <span className="text-[10px] text-gray-400">·</span>
                                             <span className="text-[10px] font-mono text-white">{selectedVariant.price}</span>
@@ -235,7 +235,7 @@ export default function BookingModal() {
                                 </div>
                                 <h3 className="text-2xl font-brand font-bold uppercase text-white mb-2">Request Received</h3>
                                 {selectedVariant && (
-                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-brand-cyan/40 rounded-full mb-4">
+                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-brand-cyan/40 mb-4">
                                         <span className="text-xs font-mono tracking-widest text-brand-cyan uppercase font-bold">{selectedVariant.label}</span>
                                         <span className="text-xs text-gray-400">·</span>
                                         <span className="text-xs font-mono text-white">{selectedVariant.price}</span>

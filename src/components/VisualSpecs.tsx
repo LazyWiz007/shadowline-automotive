@@ -151,10 +151,10 @@ export default function VisualSpecs() {
                                     <button
                                         key={v.id}
                                         onClick={() => setActiveIdx(i)}
-                                        className={`px-6 py-2.5 text-xs font-bold uppercase tracking-widest rounded-full border transition-all duration-300 cursor-pointer backdrop-blur-md shadow-sm ${
+                                        className={`px-6 py-2.5 text-xs font-medium uppercase tracking-widest border transition-all duration-300 cursor-pointer font-sans ${
                                             activeIdx === i
-                                                ? "bg-black text-white border-black shadow-lg scale-105"
-                                                : "bg-white/70 text-black border-black/20 hover:border-black hover:bg-white"
+                                                ? "bg-black text-white border-black"
+                                                : "bg-white/40 text-black border-black/30 hover:border-black hover:bg-black hover:text-white backdrop-blur-sm"
                                         }`}
                                     >
                                         {v.label}
@@ -191,41 +191,31 @@ export default function VisualSpecs() {
                                 </AnimatePresence>
                             </div>
 
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.96 }}
+                            <button
                                 onClick={handleBookNow}
-                                className="px-8 py-3.5 bg-black text-white font-brand font-bold uppercase tracking-widest text-xs rounded-full hover:bg-zinc-800 transition-all duration-300 shadow-xl cursor-pointer flex items-center gap-2 group whitespace-nowrap"
+                                className="bg-black text-white text-xs md:text-sm font-medium tracking-widest border border-black px-6 py-2.5 md:px-8 md:py-3 uppercase font-sans hover:bg-white hover:text-black transition-all duration-300 cursor-pointer whitespace-nowrap"
                             >
-                                <span>Book Now</span>
-                                <svg
-                                    className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </motion.button>
+                                Book Now
+                            </button>
                         </div>
                     </div>
 
                     {/* Prev / Next navigation buttons */}
                     <button
                         onClick={handlePrev}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/60 hover:bg-white text-black/70 hover:text-black flex items-center justify-center transition-all duration-200 backdrop-blur-md border border-black/10 shadow-md cursor-pointer group"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white/40 hover:bg-black text-black hover:text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-black/30 hover:border-black cursor-pointer group"
                         aria-label="Previous variant"
                     >
-                        <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
                     <button
                         onClick={handleNext}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/60 hover:bg-white text-black/70 hover:text-black flex items-center justify-center transition-all duration-200 backdrop-blur-md border border-black/10 shadow-md cursor-pointer group"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white/40 hover:bg-black text-black hover:text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-black/30 hover:border-black cursor-pointer group"
                         aria-label="Next variant"
                     >
-                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
@@ -315,10 +305,10 @@ export default function VisualSpecs() {
                         <button
                             key={v.id}
                             onClick={() => setActiveIdx(i)}
-                            className={`px-4 py-2 text-[11px] font-bold uppercase tracking-widest rounded-full border transition-all duration-300 cursor-pointer ${
+                            className={`px-5 py-2 text-[11px] font-medium uppercase tracking-widest border transition-all duration-300 cursor-pointer font-sans ${
                                 activeIdx === i
-                                    ? "bg-black text-white border-black shadow-md"
-                                    : "bg-white/70 text-black border-black/20 hover:border-black/60"
+                                    ? "bg-black text-white border-black"
+                                    : "bg-white/40 text-black border-black/30 hover:border-black hover:bg-black hover:text-white"
                             }`}
                         >
                             {v.label}
@@ -346,16 +336,12 @@ export default function VisualSpecs() {
                         </motion.div>
                     </AnimatePresence>
 
-                    <motion.button
-                        whileTap={{ scale: 0.96 }}
+                    <button
                         onClick={handleBookNow}
-                        className="mt-3 px-8 py-3 bg-black text-white font-brand font-bold uppercase tracking-widest text-xs rounded-full hover:bg-zinc-800 transition-colors shadow-lg cursor-pointer flex items-center gap-2"
+                        className="mt-3 px-8 py-3 bg-black text-white font-medium uppercase tracking-widest text-xs border border-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer font-sans"
                     >
-                        <span>Book Now</span>
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </motion.button>
+                        Book Now
+                    </button>
                 </div>
 
                 {/* Bike Image with Touch Swipe Support */}
@@ -394,7 +380,7 @@ export default function VisualSpecs() {
                     {[...specsLeft, ...specsRight].map((spec) => (
                         <div
                             key={spec.label}
-                            className="bg-white/60 backdrop-blur-sm p-4 border-l-2 border-black/30 shadow-sm rounded-r"
+                            className="bg-white/60 backdrop-blur-sm p-4 border-l-2 border-black/30 shadow-sm"
                         >
                             <h4 className="text-black font-brand font-bold uppercase tracking-widest text-xs mb-1">
                                 {spec.label}
@@ -429,13 +415,12 @@ export default function VisualSpecs() {
                     <p className="text-black/60 font-sans text-xs max-w-xs">
                         {active.subtext}
                     </p>
-                    <motion.button
-                        whileTap={{ scale: 0.97 }}
+                    <button
                         onClick={handleBookNow}
-                        className="mt-1 px-8 py-3.5 bg-black text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-zinc-800 transition-colors duration-300 shadow-lg cursor-pointer"
+                        className="mt-1 px-8 py-3.5 bg-black text-white font-medium uppercase tracking-widest text-xs border border-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer font-sans"
                     >
                         Book Now — {active.label}
-                    </motion.button>
+                    </button>
                     <p className="text-[9px] text-black/40 font-mono tracking-widest uppercase">
                         * Ex-showroom price · Subject to change
                     </p>
